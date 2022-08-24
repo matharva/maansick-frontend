@@ -1,6 +1,8 @@
+import axios from "axios";
 import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { LessDepth } from "three";
+import * as constants from '../constants';
 const Upload = () => {
   const navigate = useNavigate();
 
@@ -23,6 +25,19 @@ const Upload = () => {
     console.log("NIIFILE", selectedFile);
     console.log("BVALFILE", bvalFile);
     console.log("BVECFILE", bvecFile);
+
+    let formData = new FormData()
+    formData.append('nii', selectedFile);
+    formData.append('bval', bvalFile);
+    formData.append('bvec', bvecFile);
+
+    axios.post(constants.BACKEND_URL, formData)
+    .then((response) => {
+      console.log("RESPONSE", response);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
   };
   return (
     <div className="flex flex-col items-center justify-center h-screen">
