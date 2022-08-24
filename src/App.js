@@ -5,11 +5,12 @@ import "aos/dist/aos.css";
 import "./css/style.css";
 
 import AOS from "aos";
+import "./App.css";
 
 import Home from "./pages/Home";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
-import MRIStory from './pages/MRIStory';
+import MRIStory from "./pages/MRIStory";
 import ResetPassword from "./pages/ResetPassword";
 import MRIViewer from "./components/MRIViewer";
 import ThreeModel from "./components/ThreeModel";
@@ -33,7 +34,9 @@ function App() {
   }, [location.pathname]); // triggered on route change
 
   return (
-    <div className="bg-gradient-to-tr from-blue-900 via-slate-900 to-black h-screen overflow-hidden z-0 text-white">
+    <div
+    // className="bg-gradient-to-tr from-blue-900 via-slate-900 to-black h-screen overflow-hidden z-0 text-white"
+    >
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/signin" element={<SignIn />} />
@@ -41,7 +44,7 @@ function App() {
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/mri" element={<MRIViewer />} />
         <Route path="/three" element={<ThreeModel />} />
-        <Route path = '/mri-stages' element = {<MRIStory/>}/>
+        <Route path="/mri-stages" element={<MRIStory />} />
       </Routes>
     </div>
   );
