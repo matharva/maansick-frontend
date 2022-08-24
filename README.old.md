@@ -1,1 +1,0 @@
-# maansick-frontend
