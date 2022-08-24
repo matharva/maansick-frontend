@@ -12,9 +12,11 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import MRIStory from "./pages/MRIStory";
 import ResetPassword from "./pages/ResetPassword";
-import MRIViewer from "./components/MRIViewer";
-import ThreeModel from "./components/ThreeModel";
+import MRIViewer from "./pages/MRIViewer";
 import Upload from "./pages/Upload";
+import Loading from "./pages/Loading";
+
+import ThreeModel from "./components/ThreeModel";
 
 function App() {
   const location = useLocation();
@@ -41,10 +43,13 @@ function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/reset-password" element={<ResetPassword />} />
+
+        {/* MRI */}
+        <Route path="/upload" element={<Upload />} />
         <Route path="/mri" element={<MRIViewer />} />
         <Route path="/three" element={<ThreeModel />} />
+        <Route path="/loading" element={<Loading />} />
         <Route path="/mri-stages" element={<MRIStory />} />
-        <Route path="/upload" element={<Upload />} />
       </Routes>
     </div>
   );

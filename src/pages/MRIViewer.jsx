@@ -1,7 +1,13 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+// Assets
 import medical_image_preview from "../assets/medical_image_preview.jpg";
 
 const MRIViewer = () => {
+  const navigate = useNavigate();
+
+  // States
   const [selectedFile, setSelectedFile] = useState("");
   const [nonDicomImg, setNonDicomImg] = useState(false);
 
@@ -77,7 +83,10 @@ const MRIViewer = () => {
         <div className="flex items-center justify-center flex-col helper">
           <div className="text-4xl font-bold text-center ">Results</div>
           <div className="text-9xl py-10 font-bold">90%</div>
-          <button class="h-12 px-6 m-2 text-lg text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800">
+          <button
+            onClick={() => navigate("/mri-stages")}
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-bold rounded-lg text-lg px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+          >
             View Detailed Results
           </button>
         </div>
