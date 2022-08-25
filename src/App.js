@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 // import "aos/dist/aos.css";
@@ -21,6 +21,9 @@ import ThreeModel from "./components/ThreeModel";
 function App() {
   const location = useLocation();
 
+  // States
+  const [selectedFile, setSelectedFile] = useState("");
+
   useEffect(() => {
     AOS.init({
       once: true,
@@ -36,6 +39,10 @@ function App() {
     document.querySelector("html").style.scrollBehavior = "";
   }, [location.pathname]); // triggered on route change
 
+  useEffect(() => {
+    console.log("From App js: ", selectedFile);
+  }, [selectedFile]);
+
   return (
     <div className="">
       <Routes>
@@ -45,8 +52,16 @@ function App() {
         <Route path="/reset-password" element={<ResetPassword />} />
 
         {/* MRI */}
-        <Route path="/upload" element={<Upload />} />
-        <Route path="/mri" element={<MRIViewer />} />
+        <Route
+          path="/upload"
+          element={
+            <Upload
+              selectedFile={selectedFile}
+              setSelectedFile={setSelectedFile}
+            />
+          }
+        />
+        <Route path="/mri" element={<MRIViewer niiFile={selectedFile} />} />
         <Route path="/three" element={<ThreeModel />} />
         <Route path="/loading" element={<Loading />} />
         <Route path="/mri-stages" element={<MRIStory />} />

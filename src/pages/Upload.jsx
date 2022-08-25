@@ -3,11 +3,11 @@ import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LessDepth } from "three";
 import * as constants from "../constants";
-const Upload = () => {
+const Upload = ({ selectedFile, setSelectedFile }) => {
   const navigate = useNavigate();
 
   // States
-  const [selectedFile, setSelectedFile] = useState("");
+
   const [bvalFile, setBValFile] = useState("");
   const [bvecFile, setBVecFile] = useState("");
 
