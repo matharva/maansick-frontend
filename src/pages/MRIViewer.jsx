@@ -2,15 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 // Assets
 import medical_image_preview from "../assets/medical_image_preview.jpg";
-import Speedometer, {
-  Background,
-  Arc,
-  Needle,
-  Progress,
-  Marks,
-  Indicator,
-  DangerPath
-}from 'react-speedometer';
+
 import { CountUp } from 'use-count-up'
 const MRIViewer = () => {
   const navigate = useNavigate();
@@ -120,20 +112,6 @@ const MRIViewer = () => {
             View Detailed Results
           </button>
         </div>
-  {/* <Speedometer
-    value={96}
-    max={100}
-    fontFamily='Helvetica'
-
-  >
-    <Background />
-    <Arc arcWidth={50}/>
-    <Needle/>
-    <DangerPath/>
-    <Progress/>
-    <Marks/>
-    <Indicator/>
-  </Speedometer> */}
       </div>
     </div>
   );
