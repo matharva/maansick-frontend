@@ -1,9 +1,10 @@
 import axios from "axios";
+import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { BACKEND_URL } from "../constants";
 import Header from "../partials/Header";
-// import Header from "../partials/Header";
 
+// import Header from "../partials/Header";
 const Upload = ({ bulkFiles, setBulkFiles, setSVMResult }) => {
   const navigate = useNavigate();
 
@@ -68,15 +69,22 @@ const Upload = ({ bulkFiles, setBulkFiles, setSVMResult }) => {
       });
   };
   return (
-    <>
+    <motion.div
+    initial={{ opacity: 0}}
+    animate={{ opacity: 1}}
+    transition={{ duration: 0.5 }}
+    >
       <Header />
 
-      <div className="flex flex-col items-center justify-center h-screen">
+      <div className="flex flex-col items-center justify-center h-screen patientUploadBg">
         {/* <div className="text-6xl font-bold mb-10">Upload page</div> */}
         <div className="flex flex-col items-center justify-center">
           <div className="flex flex-col mt-4">
-            <label className="text-4xl font-bold text-center mb-12">
-              Upload Bulk files
+            <label className="text-4xl text-center mb-12 font-extrabold">
+              Upload {" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
+                Bulk
+              </span> files
             </label>
 
             <div class="flex justify-center items-center w-full">
@@ -144,13 +152,13 @@ const Upload = ({ bulkFiles, setBulkFiles, setSVMResult }) => {
           <button
             type="submit"
             onClick={sendFilesToBackend}
-            class="mt-8 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+            class="mt-8 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 transition-all ease-in-out duration-300 hover:scale-105 scale-100"
           >
             Visualize image
           </button>
         </div>
       </div>
-    </>
+    </motion.div>
   );
 };
 
