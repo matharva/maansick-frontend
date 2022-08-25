@@ -39,7 +39,7 @@ const Upload = ({ bulkFiles, setBulkFiles, setSVMResult }) => {
       .then((response) => {
         console.log("res: ", response);
         let data = response.data
-        setSVMResult(data.stat);
+        setSVMResult(data.score);
         navigate("/mri");
       })
       .catch((err) => {
