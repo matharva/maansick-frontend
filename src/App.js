@@ -20,6 +20,7 @@ import ThreeModel from "./components/ThreeModel";
 import Patients from "./pages/Patients";
 import PatientInfo from "./pages/PatientInfo";
 import { AuthProvider } from "./context/AuthContext";
+import Header from "./partials/Header";
 
 function App() {
   const location = useLocation();
@@ -86,9 +87,9 @@ function App() {
           <Route path="/mri-stages" element={<MRIStory />} />
 
           {/*Patient-Roadmap*/}
-          <Route path="/patient/roadmap" element={<Roadmap />} />
+          {/* <Route path="/roadmap" element={<Roadmap />} /> */}
           <Route path="/doctor/patients" element={<Patients />} />
-          <Route path="/doctor/patients/info" element={<PatientInfo />} />
+          <Route path="/doctor/patients/:email" element={<PatientInfo />} />
         </Routes>
       </AuthProvider>
     </div>

@@ -5,7 +5,6 @@ import axios from "axios";
 import { CountUp } from "use-count-up";
 import Roadmap from './Roadmap';
 
-
 const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
   const navigate = useNavigate();
 
@@ -66,7 +65,16 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
   }, [params]);
 
   return (
-    <div>
+    <div style={{padding:"30px"}}>
+      <div style = {{textAlign: "center"}}>
+        <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4"
+                // data-aos="zoom-y-out"
+        >Visualiser {" "}<span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
+                  MaanSick</span>
+        </h1>
+      </div>
+
+
       {/* MRI viewer */}
       <div className="flex h-screen items-center justify-center">
       <div style={{ flex: "0.5" }}>
@@ -118,13 +126,15 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
         </div>
       </div>
       </div>
-      
+
+      {/* Motion */}
       <div>
         <Roadmap/>
           {/* {
             localStorag.getItem("name") == "motwani"? <div><Roadmap/></div>: <div></div>
           } */}
       </div>
+  
     </div>
   );
 };
