@@ -2,7 +2,6 @@ import React from "react";
 import {useState} from 'react';
 import "../css/additional-styles/roadmap.css";
 import { motion } from 'framer-motion';
-import { useState } from "react";
 import "../css/additional-styles/roadmap.css";
 
 const ReadMore = ({ children }) => {

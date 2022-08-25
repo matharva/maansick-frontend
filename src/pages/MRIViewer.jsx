@@ -4,7 +4,6 @@ import { BACKEND_URL, IS_CNN, IS_SVM } from "../constants";
 import axios from "axios";
 import { CountUp } from "use-count-up";
 import Roadmap from './Roadmap';
-import Modal from "../utils/Modal";
 
 const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
   const navigate = useNavigate();
@@ -64,24 +63,8 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
                   MaanSick</span>
         </h1>
       </div>
-                 {/* Modal */}
-      <Modal
-        id="modal"
-        ariaLabel="modal-headline"
-        show={videoModalOpen}
-        handleClose={() => setVideoModalOpen(false)}
-      >
-        <div className="relative pb-9/16">
-          <iframe
-            className="absolute w-full h-full"
-            src="https://player.vimeo.com/video/174002812"
-            title="Video"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </Modal>
 
-      
+
       {/* MRI viewer */}
       <div className="flex h-screen items-center justify-center">
       <div style={{ flex: "0.5" }}>
@@ -124,14 +107,15 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
         </div>
       </div>
       </div>
+
       {/* Motion */}
-  
       <div>
         <Roadmap/>
           {/* {
             localStorage.getItem("name") == "motwani"? <div><Roadmap/></div>: <div></div>
           } */}
       </div>
+  
     </div>
   );
 };
