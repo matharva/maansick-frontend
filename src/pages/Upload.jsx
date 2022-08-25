@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { BACKEND_URL } from "../constants";
+import Header from "../partials/Header"
 import { useAuth } from "../context/AuthContext";
 
 const Upload = ({ bulkFiles, setBulkFiles, setSVMResult }) => {
@@ -59,29 +60,62 @@ const Upload = ({ bulkFiles, setBulkFiles, setSVMResult }) => {
       });
   };
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <div className="text-6xl font-bold mb-10">Upload page</div>
-      <div className="flex flex-col items-start justify-center">
-        <div className="flex flex-col mt-4">
-          <label className="text-3xl font-bold">Upload Bulk files:</label>
-          <input
-            required
-            type="file"
-            onChange={selectBulkFiles}
-            multiple
-            className="mt-4 items-center"
-          />
-        </div>
-
-        <button
-          type="submit"
-          onClick={sendFilesToBackend}
-          class="mt-8 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-        >
-          Visualize image
-        </button>
+    <>{
+      localStorage.getItem("name") == null ? <Header /> : <></>
+    }<div className="flex flex-col items-center justify-center h-screen">
+    <div className="text-6xl font-bold mb-10">Upload page</div>
+    <div className="flex flex-col items-start justify-center">
+      {/* <div className="flex flex-col">
+        <label className="text-3xl font-bold">Upload NII file:</label>
+        <input
+          required
+          type="file"
+          onChange={selectFile}
+          className="mt-4 items-center"
+        />
       </div>
+      <br />
+      <div className="flex flex-col mt-4">
+        <label className="text-3xl font-bold">Upload Bvec file:</label>
+        <input
+          required
+          type="file"
+          onChange={selectBVecFile}
+          className="mt-4"
+        />
+      </div>
+      <br />
+      <div className="flex flex-col mt-4">
+        <label className="text-3xl font-bold">Upload BVal file:</label>
+        <input
+          required
+          type="file"
+          onChange={selectBValFile}
+          className="mt-4"
+        />
+      </div>
+      <br /> */}
+      <div className="flex flex-col mt-4">
+        <label className="text-3xl font-bold">Upload Bulk files:</label>
+        <input
+          required
+          type="file"
+          onChange={selectBulkFiles}
+          multiple
+          className="mt-4 items-center"
+        />
+      </div>
+
+      <button
+        type="submit"
+        onClick={sendFilesToBackend}
+        class="mt-8 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+      >
+        Visualize image
+      </button>
     </div>
+  </div></>
+    
   );
 };
 
