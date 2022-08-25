@@ -86,9 +86,9 @@ function App() {
           <Route path="/mri-stages" element={<MRIStory />} />
 
           {/*Patient-Roadmap*/}
-          <Route path="/roadmap" element={<Roadmap />} />
-          <Route path="/patients" element={<Patients />} />
-          <Route path="/patients/info" element={<PatientInfo />} />
+          <Route path="/patient/roadmap" element={<Roadmap />} />
+          <Route path="/doctor/patients" element={<Patients />} />
+          <Route path="/doctor/patients/info" element={<PatientInfo />} />
         </Routes>
       </AuthProvider>
     </div>
