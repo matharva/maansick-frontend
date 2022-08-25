@@ -1,13 +1,12 @@
-// import axios from "axios";
+import axios from "axios";
 import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { LessDepth } from "three";
-import * as constants from "../constants";
+import { BACKEND_URL } from "../constants";
+
 const Upload = ({ selectedFile, setSelectedFile }) => {
   const navigate = useNavigate();
 
   // States
-
   const [bvalFile, setBValFile] = useState("");
   const [bvecFile, setBVecFile] = useState("");
 
@@ -31,16 +30,19 @@ const Upload = ({ selectedFile, setSelectedFile }) => {
     formData.append("bval", bvalFile);
     formData.append("bvec", bvecFile);
 
-    // axios.post(constants.BACKEND_URL, formData)
-    // .then((response) => {
-    //   console.log("RESPONSE", response);
-    // })
-    // .catch((err) => {
-    //   console.log(err);
-    // })
+    const SVMendpoint = BACKEND_URL + "/evaluate";
+
+    axios
+      .post(SVMendpoint, formData)
+      .then((response) => {
+        console.log("res: ", response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-red-200">
+    <div className="flex flex-col items-center justify-center h-screen">
       <div className="text-6xl font-bold mb-10">Upload page</div>
       <div className="flex flex-col items-start justify-center">
         {/* <form onSubmit={sendFilesToBackend}> */}

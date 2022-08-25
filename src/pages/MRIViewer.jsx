@@ -1,22 +1,53 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { BACKEND_URL, IS_CNN, IS_SVM } from "../constants";
+import axios from "axios";
 
 const MRIViewer = ({ niiFile }) => {
   const navigate = useNavigate();
+
+  // States
+  const [SVMResult, setSVMResult] = useState(0);
+
+  // Side Effects
   useEffect(() => {
-    console.log("niiFile", niiFile);
+    const data = {
+      file_name: niiFile.name,
+    };
+    console.log("CNN Data: ", data);
+    if (IS_CNN) {
+      const CNNendpoint = BACKEND_URL + "";
+      axios
+        .post(CNNendpoint, data)
+        .then((response) => {
+          console.log("res: ", response);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   }, [niiFile]);
 
   const params = useMemo(() => {
     const p = [];
     p["kioskMode"] = true;
-    p["surfaces"] = ["/sample_image.surf"];
-    p["images"] = ["/sample_dwi.nii.gz"];
+
+    if (IS_SVM) {
+      p["surfaces"] = ["/sample_image.surf"];
+      p["images"] = ["/sample_dwi.nii.gz"];
+    }
 
     return p;
   }, [niiFile]);
 
   useEffect(() => {
+    if (IS_SVM) {
+      const SVMUrl = BACKEND_URL + "";
+      axios.get(SVMUrl).then((res) => {
+        console.log("Result: ", res);
+      });
+    }
+
     window.papaya.Container.startPapaya();
     window.papaya.Container.resetViewer(0, params);
   }, [params]);
@@ -32,7 +63,7 @@ const MRIViewer = ({ niiFile }) => {
       >
         <div className="flex items-center justify-center flex-col">
           <div className="text-4xl font-bold text-center ">Results</div>
-          <div className="text-9xl py-10 font-bold">90%</div>
+          <div className="text-9xl py-10 font-bold">{`${SVMResult}%`}</div>
           <button
             onClick={() => navigate("/loading")}
             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-bold rounded-lg text-lg px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
