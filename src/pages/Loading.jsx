@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+// import "axios";
 
 const Loading = () => {
   const navigate = useNavigate();
@@ -8,6 +9,8 @@ const Loading = () => {
     setTimeout(() => {
       navigate("/mri-stages");
     }, 2000);
+
+    // setInterval(() => {}, 3000);
   }, []);
   return (
     <>
@@ -31,7 +34,6 @@ const Loading = () => {
           height={"100%"}
           className="h-screen w-screen"
           src="http://localhost:1234"
-          // frameborder="0"
         ></iframe>
       </div>
     </>

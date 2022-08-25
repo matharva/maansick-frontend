@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
-import "aos/dist/aos.css";
+// import "aos/dist/aos.css";
 import "./css/style.css";
 
 import AOS from "aos";

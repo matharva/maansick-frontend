@@ -1,8 +1,8 @@
-import axios from "axios";
+// import axios from "axios";
 import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LessDepth } from "three";
-import * as constants from '../constants';
+import * as constants from "../constants";
 const Upload = () => {
   const navigate = useNavigate();
 
@@ -26,21 +26,21 @@ const Upload = () => {
     console.log("BVALFILE", bvalFile);
     console.log("BVECFILE", bvecFile);
 
-    let formData = new FormData()
-    formData.append('nii', selectedFile);
-    formData.append('bval', bvalFile);
-    formData.append('bvec', bvecFile);
+    let formData = new FormData();
+    formData.append("nii", selectedFile);
+    formData.append("bval", bvalFile);
+    formData.append("bvec", bvecFile);
 
-    axios.post(constants.BACKEND_URL, formData)
-    .then((response) => {
-      console.log("RESPONSE", response);
-    })
-    .catch((err) => {
-      console.log(err);
-    })
+    // axios.post(constants.BACKEND_URL, formData)
+    // .then((response) => {
+    //   console.log("RESPONSE", response);
+    // })
+    // .catch((err) => {
+    //   console.log(err);
+    // })
   };
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center h-screen bg-red-200">
       <div className="text-6xl font-bold mb-10">Upload page</div>
       <div className="flex flex-col items-start justify-center">
         {/* <form onSubmit={sendFilesToBackend}> */}
