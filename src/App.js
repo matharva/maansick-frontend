@@ -19,6 +19,7 @@ import Roadmap from "./pages/Roadmap";
 import ThreeModel from "./components/ThreeModel";
 import Patients from "./pages/Patients";
 import PatientInfo from "./pages/PatientInfo";
+import { AuthProvider } from "./context/AuthContext";
 
 function App() {
   const location = useLocation();
@@ -50,44 +51,46 @@ function App() {
 
   return (
     <div className="">
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
+      <AuthProvider>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
 
-        {/* MRI */}
-        <Route
-          path="/upload"
-          element={
-            <Upload
-              selectedFile={selectedFile}
-              setSelectedFile={setSelectedFile}
-              setSVMResult={setSVMResult}
-              bulkFiles={bulkFiles}
-              setBulkFiles={setBulkFiles}
-            />
-          }
-        />
-        <Route
-          path="/mri"
-          element={
-            <MRIViewer
-              niiFile={selectedFile}
-              SVMResult={SVMResult}
-              bulkFiles={bulkFiles}
-            />
-          }
-        />
-        <Route path="/three" element={<ThreeModel />} />
-        <Route path="/loading" element={<Loading />} />
-        <Route path="/mri-stages" element={<MRIStory />} />
+          {/* MRI */}
+          <Route
+            path="/upload"
+            element={
+              <Upload
+                selectedFile={selectedFile}
+                setSelectedFile={setSelectedFile}
+                setSVMResult={setSVMResult}
+                bulkFiles={bulkFiles}
+                setBulkFiles={setBulkFiles}
+              />
+            }
+          />
+          <Route
+            path="/mri"
+            element={
+              <MRIViewer
+                niiFile={selectedFile}
+                SVMResult={SVMResult}
+                bulkFiles={bulkFiles}
+              />
+            }
+          />
+          <Route path="/three" element={<ThreeModel />} />
+          <Route path="/loading" element={<Loading />} />
+          <Route path="/mri-stages" element={<MRIStory />} />
 
-        {/*Patient-Roadmap*/}
-        <Route path="/roadmap" element={<Roadmap />} />
-        <Route path="/patients" element={<Patients />} />
-        <Route path="/patients/info" element={<PatientInfo />} />
-      </Routes>
+          {/*Patient-Roadmap*/}
+          <Route path="/roadmap" element={<Roadmap />} />
+          <Route path="/patients" element={<Patients />} />
+          <Route path="/patients/info" element={<PatientInfo />} />
+        </Routes>
+      </AuthProvider>
     </div>
   );
 }

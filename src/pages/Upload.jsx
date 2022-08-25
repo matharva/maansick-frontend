@@ -1,10 +1,17 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { BACKEND_URL } from "../constants";
+import { useAuth } from "../context/AuthContext";
 
 const Upload = ({ bulkFiles, setBulkFiles, setSVMResult }) => {
   const navigate = useNavigate();
+
+  const { a } = useAuth();
+
+  useEffect(() => {
+    console.log("from context: ", a);
+  }, []);
 
   const selectBulkFiles = (e) => {
     const files = e.target.files;
