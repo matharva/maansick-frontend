@@ -89,7 +89,7 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
         style={{ flex: "0.5", height: "100%" }}
       >
         <div className="flex items-center justify-center flex-col">
-          <div className="text-4xl font-bold text-center ">Results: 
+          <div className="text-4xl font-bold text-center ">Result: 
           {/* {SVMResult?.score?.toFixed(2)} */}
           </div>
           {SVMResult?.score? (
