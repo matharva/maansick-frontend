@@ -60,13 +60,11 @@ function Header() {
           <nav className="flex flex-grow">
             <ul className="flex flex-grow justify-end flex-wrap items-center">
               <li>
-                {
-                  localStorage?.getItem("name") == null?(
-                    <div>
+                {localStorage?.getItem("name") == null ? (
+                  <div>
                     <Link
                       to="/signin"
                       className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3"
-                     
                     >
                       <span>Sign in</span>
                       <svg
@@ -80,19 +78,19 @@ function Header() {
                         />
                       </svg>
                     </Link>
-                    </div>
-                    
-                  ):(
-                    <div onClick={()=>{
-                      console.log("heheheh")
-                        localStorage.removeItem("name", "");
-                        localStorage.removeItem("type", "");
-                        localStorage.removeItem("email", "");
-                        localStorage.removeItem("phoneNumber", "");
-                        // localStorage.clear();
-
-                      }}>
-                 <Link
+                  </div>
+                ) : (
+                  <div
+                    onClick={() => {
+                      console.log("heheheh");
+                      localStorage.removeItem("name", "");
+                      localStorage.removeItem("type", "");
+                      localStorage.removeItem("email", "");
+                      localStorage.removeItem("phoneNumber", "");
+                      // localStorage.clear();
+                    }}
+                  >
+                    <Link
                       to="/"
                       className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3"
                     >
@@ -108,15 +106,11 @@ function Header() {
                         />
                       </svg>
                     </Link>
-                    </div>
-   
-                  )
-                }
-                
-                
+                  </div>
+                )}
               </li>
-              </ul>
-              </nav>
+            </ul>
+          </nav>
         </div>
       </div>
     </header>

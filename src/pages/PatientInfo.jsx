@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { BACKEND_URL, IS_CNN, IS_SVM } from "../constants";
 import axios from "axios";
 import { CountUp } from "use-count-up";
+import Header from "../partials/Header";
 
 const PatientInfo = ({ niiFile, SVMResult, bulkFiles }) => {
   const navigate = useNavigate();
@@ -62,7 +63,7 @@ const PatientInfo = ({ niiFile, SVMResult, bulkFiles }) => {
 
   return (
     <>
-      {/* <Header /> */}
+      <Header />
 
       <div className="flex h-screen items-center justify-center">
         <div style={{ flex: "0.5" }}>
