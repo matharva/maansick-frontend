@@ -4,7 +4,7 @@ import { BACKEND_URL, IS_CNN, IS_SVM } from "../constants";
 import axios from "axios";
 import { CountUp } from "use-count-up";
 import Roadmap from './Roadmap';
-
+import Modal from "../utils/Modal";
 
 const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
   const navigate = useNavigate();
@@ -56,7 +56,32 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
   }, [params]);
 
   return (
-    <div>
+    <div style={{padding:"30px"}}>
+      <div style = {{textAlign: "center"}}>
+        <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4"
+                // data-aos="zoom-y-out"
+        >Visualiser {" "}<span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
+                  MaanSick</span>
+        </h1>
+      </div>
+                 {/* Modal */}
+      <Modal
+        id="modal"
+        ariaLabel="modal-headline"
+        show={videoModalOpen}
+        handleClose={() => setVideoModalOpen(false)}
+      >
+        <div className="relative pb-9/16">
+          <iframe
+            className="absolute w-full h-full"
+            src="https://player.vimeo.com/video/174002812"
+            title="Video"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </Modal>
+
+      
       {/* MRI viewer */}
       <div className="flex h-screen items-center justify-center">
       <div style={{ flex: "0.5" }}>
@@ -99,7 +124,8 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
         </div>
       </div>
       </div>
-      
+      {/* Motion */}
+  
       <div>
         <Roadmap/>
           {/* {
