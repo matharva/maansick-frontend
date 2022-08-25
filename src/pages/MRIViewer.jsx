@@ -3,16 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { BACKEND_URL, IS_CNN, IS_SVM } from "../constants";
 import axios from "axios";
 
-const MRIViewer = ({ niiFile }) => {
+const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
   const navigate = useNavigate();
-
-  // States
-  const [SVMResult, setSVMResult] = useState(0);
 
   // Side Effects
   useEffect(() => {
     const data = {
-      file_name: niiFile.name,
+      file_name: bulkFiles["nii"].name,
     };
     console.log("CNN Data: ", data);
     if (IS_CNN) {
@@ -26,7 +23,7 @@ const MRIViewer = ({ niiFile }) => {
           console.log(err);
         });
     }
-  }, [niiFile]);
+  }, [bulkFiles]);
 
   const params = useMemo(() => {
     const p = [];
@@ -41,13 +38,6 @@ const MRIViewer = ({ niiFile }) => {
   }, [niiFile]);
 
   useEffect(() => {
-    if (IS_SVM) {
-      const SVMUrl = BACKEND_URL + "";
-      axios.get(SVMUrl).then((res) => {
-        console.log("Result: ", res);
-      });
-    }
-
     window.papaya.Container.startPapaya();
     window.papaya.Container.resetViewer(0, params);
   }, [params]);
@@ -63,7 +53,11 @@ const MRIViewer = ({ niiFile }) => {
       >
         <div className="flex items-center justify-center flex-col">
           <div className="text-4xl font-bold text-center ">Results</div>
-          <div className="text-9xl py-10 font-bold">{`${SVMResult}%`}</div>
+          {SVMResult ? (
+            <div className="text-9xl py-10 font-bold">`${SVMResult}%`</div>
+          ) : (
+            <div className="my-4">Fetching results...</div>
+          )}
           <button
             onClick={() => navigate("/loading")}
             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-bold rounded-lg text-lg px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"

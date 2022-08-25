@@ -1,34 +1,36 @@
 import axios from "axios";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BACKEND_URL } from "../constants";
 
-const Upload = ({ selectedFile, setSelectedFile }) => {
+const Upload = ({ bulkFiles, setBulkFiles, setSVMResult }) => {
   const navigate = useNavigate();
 
-  // States
-  const [bvalFile, setBValFile] = useState("");
-  const [bvecFile, setBVecFile] = useState("");
+  const selectBulkFiles = (e) => {
+    const files = e.target.files;
+    console.log(e.target.files);
+    const fileData = {
+      nii: null,
+      bval: null,
+      bvec: null,
+    };
 
-  // Handlers
-  const selectFile = useCallback((e) => setSelectedFile(e.target.files[0]), []);
-  const selectBValFile = useCallback((e) => setBValFile(e.target.files[0]), []);
-  const selectBVecFile = useCallback((e) => setBVecFile(e.target.files[0]), []);
+    Array.from(files).forEach((item) => {
+      if (item.name.includes("nii")) fileData["nii"] = item;
+      if (item.name.includes("bval")) fileData["bval"] = item;
+      if (item.name.includes("grad")) fileData["bvec"] = item;
+    });
+
+    console.log("Files: ", fileData);
+    setBulkFiles(fileData);
+  };
 
   // Upload function
   const sendFilesToBackend = (e) => {
-    navigate("/mri");
-
-    // send files to backend
-    e.preventDefault();
-    console.log("NIIFILE", selectedFile);
-    console.log("BVALFILE", bvalFile);
-    console.log("BVECFILE", bvecFile);
-
     let formData = new FormData();
-    formData.append("nii", selectedFile);
-    formData.append("bval", bvalFile);
-    formData.append("bvec", bvecFile);
+    formData.append("nii", bulkFiles["nii"]);
+    formData.append("bval", bulkFiles["bval"]);
+    formData.append("bvec", bulkFiles["bvec"]);
 
     const SVMendpoint = BACKEND_URL + "/evaluate";
 
@@ -36,6 +38,8 @@ const Upload = ({ selectedFile, setSelectedFile }) => {
       .post(SVMendpoint, formData)
       .then((response) => {
         console.log("res: ", response);
+        setSVMResult(response);
+        navigate("/mri");
       })
       .catch((err) => {
         console.log(err);
@@ -45,8 +49,7 @@ const Upload = ({ selectedFile, setSelectedFile }) => {
     <div className="flex flex-col items-center justify-center h-screen">
       <div className="text-6xl font-bold mb-10">Upload page</div>
       <div className="flex flex-col items-start justify-center">
-        {/* <form onSubmit={sendFilesToBackend}> */}
-        <div className="flex flex-col">
+        {/* <div className="flex flex-col">
           <label className="text-3xl font-bold">Upload NII file:</label>
           <input
             required
@@ -75,7 +78,17 @@ const Upload = ({ selectedFile, setSelectedFile }) => {
             className="mt-4"
           />
         </div>
-        <br />
+        <br /> */}
+        <div className="flex flex-col mt-4">
+          <label className="text-3xl font-bold">Upload Bulk files:</label>
+          <input
+            required
+            type="file"
+            onChange={selectBulkFiles}
+            multiple
+            className="mt-4 items-center"
+          />
+        </div>
 
         <button
           type="submit"
@@ -84,11 +97,6 @@ const Upload = ({ selectedFile, setSelectedFile }) => {
         >
           Visualize image
         </button>
-
-        {/* <button type="submit" style={{ marginTop: "10px" }}>
-            Visualize image
-          </button> */}
-        {/* </form> */}
       </div>
     </div>
   );

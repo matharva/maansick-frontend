@@ -23,7 +23,10 @@ function App() {
 
   // States
   const [selectedFile, setSelectedFile] = useState("");
+  const [SVMResult, setSVMResult] = useState(0);
+  const [bulkFiles, setBulkFiles] = useState(null);
 
+  // Side effects
   useEffect(() => {
     AOS.init({
       once: true,
@@ -58,10 +61,22 @@ function App() {
             <Upload
               selectedFile={selectedFile}
               setSelectedFile={setSelectedFile}
+              setSVMResult={setSVMResult}
+              bulkFiles={bulkFiles}
+              setBulkFiles={setBulkFiles}
             />
           }
         />
-        <Route path="/mri" element={<MRIViewer niiFile={selectedFile} />} />
+        <Route
+          path="/mri"
+          element={
+            <MRIViewer
+              niiFile={selectedFile}
+              SVMResult={SVMResult}
+              bulkFiles={bulkFiles}
+            />
+          }
+        />
         <Route path="/three" element={<ThreeModel />} />
         <Route path="/loading" element={<Loading />} />
         <Route path="/mri-stages" element={<MRIStory />} />
