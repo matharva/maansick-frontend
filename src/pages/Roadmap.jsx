@@ -23,10 +23,6 @@ const ReadMore = ({ children }) => {
 function Roadmap() {
   return (
     <div>
-        {/* If patient then show MRI viewer with depress precentage */}
-        <div>
-            <MRIViewer/>
-        </div>
         {/* Roadmap */}
         <div className="roadmap-box" style={{position: "absolute", top: "800px", left: "20px", padding: "20px",
     right: "30%"}}>

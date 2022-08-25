@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { BACKEND_URL, IS_CNN, IS_SVM } from "../constants";
 import axios from "axios";
 import { CountUp } from "use-count-up";
-
+import Roadmap from './Roadmap';
 const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
   const navigate = useNavigate();
 
@@ -54,7 +54,9 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
   }, [params]);
 
   return (
-    <div className="flex h-screen items-center justify-center">
+    <div>
+      {/* MRI viewer */}
+      <div className="flex h-screen items-center justify-center">
       <div style={{ flex: "0.5" }}>
         <div id="papaya_viewer" class="papaya"></div>
       </div>
@@ -93,6 +95,12 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
             View Detailed Results
           </button>
         </div>
+      </div>
+      </div>
+      <div>
+          {
+            localStorage.getItem("name") == "motwani"? <div><Roadmap/></div>: <div></div>
+          }
       </div>
     </div>
   );
