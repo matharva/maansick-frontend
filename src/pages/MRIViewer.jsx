@@ -4,6 +4,8 @@ import { BACKEND_URL, IS_CNN, IS_SVM } from "../constants";
 import axios from "axios";
 import { CountUp } from "use-count-up";
 import Roadmap from './Roadmap';
+
+
 const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
   const navigate = useNavigate();
 
@@ -97,10 +99,12 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
         </div>
       </div>
       </div>
+      
       <div>
-          {
+        <Roadmap/>
+          {/* {
             localStorage.getItem("name") == "motwani"? <div><Roadmap/></div>: <div></div>
-          }
+          } */}
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import {useState} from 'react' 
 import "../css/additional-styles/roadmap.css";
-import MRIViewer from './MRIViewer';
+
 
 const ReadMore = ({ children }) => {
     const text = children;
@@ -24,7 +24,9 @@ function Roadmap() {
   return (
     <div>
         {/* Roadmap */}
-        <div className="roadmap-box" style={{position: "absolute", top: "40px", left: "20px", padding: "20px",
+        <time class="text-lg font-bold text-gray-900 dark:text-black-1200" style={{position: "absolute", left: "20px", padding: "15px",
+        right: "30%", fontSize: "30px"}}>How can I help myself?</time>
+        <div className="roadmap-box" style={{position: "absolute", top: "700px", left: "20px", padding: "20px", paddingTop: "10px",
     right: "30%"}}>
         <ol class="relative border-l border-gray-200 dark:border-gray-700">    
             {/* 1 */}
