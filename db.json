@@ -1,0 +1,251 @@
+{
+    "patients": [
+        {
+            "name": "Aditya Motwani",
+            "email": "aditya.motwani@spit.ac.in",
+            "niiFileName": "",
+            "mappedDoctorEmail": "",
+            "quadrant": "",
+            "perc": "",
+            "staticImages": []
+        },
+        {
+            "name": "Deep Nayak",
+            "email": "deep.nayak@spit.ac.in",
+            "niiFileName": "",
+            "mappedDoctorEmail": "",
+            "quadrant": "",
+            "perc": "",
+            "staticImages": []
+        },
+        {
+            "name": "Ameya Jangam",
+            "email": "ameya.jangam@spit.ac.in",
+            "niiFileName": "",
+            "mappedDoctorEmail": "",
+            "quadrant": "",
+            "perc": "",
+            "staticImages": []
+        },
+        {
+            "name": "Pranav Nair",
+            "email": "pranav.nair@spit.ac.in",
+            "niiFileName": "",
+            "mappedDoctorEmail": "",
+            "quadrant": "",
+            "perc": "",
+            "staticImages": []
+        },
+        {
+            "name": "Shashank Sarma",
+            "email": "shashank.sarma@spit.ac.in",
+            "niiFileName": "",
+            "mappedDoctorEmail": "",
+            "quadrant": "",
+            "perc": "",
+            "staticImages": []
+        },
+        {
+            "name": "Sumeet Haldipur",
+            "email": "sumeet.haldipur@spit.ac.in",
+            "niiFileName": "",
+            "mappedDoctorEmail": "",
+            "quadrant": "",
+            "perc": "",
+            "staticImages": []
+        },
+        {
+            "name": "Bhushan Patil",
+            "email": "bhushan.patil@spit.ac.in",
+            "niiFileName": "",
+            "mappedDoctorEmail": "",
+            "quadrant": "",
+            "perc": "",
+            "staticImages": []
+        },
+        {
+            "name": "Naresh Gandhi",
+            "email": "naresh.gandhi@spit.ac.in",
+            "niiFileName": "",
+            "mappedDoctorEmail": "",
+            "quadrant": "",
+            "perc": "",
+            "staticImages": []
+        },
+        {
+            "name": "Rohit Mody",
+            "email": "rohit.mody@spit.ac.in",
+            "niiFileName": "",
+            "mappedDoctorEmail": "",
+            "quadrant": "",
+            "perc": "",
+            "staticImages": []
+        },
+        {
+            "name": "Manthan Juthani",
+            "email": "manthan.juthani@spit.ac.in",
+            "niiFileName": "",
+            "mappedDoctorEmail": "",
+            "quadrant": "",
+            "perc": "",
+            "staticImages": []
+        },
+        {
+            "name": "Bhishan Patel",
+            "email": "bhishan.patel@spit.ac.in",
+            "niiFileName": "",
+            "mappedDoctorEmail": "",
+            "quadrant": "",
+            "perc": "",
+            "staticImages": []
+        },
+        {
+            "name": "Bangam Jangam",
+            "email": "bangam.jangam@spit.ac.in",
+            "niiFileName": "",
+            "mappedDoctorEmail": "",
+            "quadrant": "",
+            "perc": "",
+            "staticImages": []
+        },
+        {
+            "name": "Nidhi Haldipur",
+            "email": "nidhi.haldipur@spit.ac.in",
+            "niiFileName": "",
+            "mappedDoctorEmail": "",
+            "quadrant": "",
+            "perc": "",
+            "staticImages": []
+        },
+        {
+            "name": "Jeenal Todi",
+            "email": "jeenal.todi@spit.ac.in",
+            "niiFileName": "",
+            "mappedDoctorEmail": "",
+            "quadrant": "",
+            "perc": "",
+            "staticImages": []
+        },
+        {
+            "name": "Prachi Sarma",
+            "email": "prachi.sarma@spit.ac.in",
+            "niiFileName": "",
+            "mappedDoctorEmail": "",
+            "quadrant": "",
+            "perc": "",
+            "staticImages": []
+        },
+        {
+            "name": "Neha Raheja",
+            "email": "neha.raheja@spit.ac.in",
+            "niiFileName": "",
+            "mappedDoctorEmail": "",
+            "quadrant": "",
+            "perc": "",
+            "staticImages": []
+        },
+        {
+            "name": "Krish Hegde",
+            "email": "krish.hegde@spit.ac.in",
+            "niiFileName": "",
+            "mappedDoctorEmail": "",
+            "quadrant": "",
+            "perc": "",
+            "staticImages": []
+        },
+        {
+            "name": "Abhishek Hawa",
+            "email": "abhishek.hawa@spit.ac.in",
+            "niiFileName": "",
+            "mappedDoctorEmail": "",
+            "quadrant": "",
+            "perc": "",
+            "staticImages": []
+        },
+        {
+            "name": "Yash Brid",
+            "email": "yash.brid@spit.ac.in",
+            "niiFileName": "",
+            "mappedDoctorEmail": "",
+            "quadrant": "",
+            "perc": "",
+            "staticImages": []
+        },
+        {
+            "name": "Riya Nagaria",
+            "email": "riya.nagaria@spit.ac.in",
+            "niiFileName": "",
+            "mappedDoctorEmail": "",
+            "quadrant": "",
+            "perc": "",
+            "staticImages": []
+        },
+        {
+            "name": "Yashvi Patil",
+            "email": "yashvi.patil@spit.ac.in",
+            "niiFileName": "",
+            "mappedDoctorEmail": "",
+            "quadrant": "",
+            "perc": "",
+            "staticImages": []
+        },
+        {
+            "name": "Manthan Anklesaria",
+            "email": "manthan.anklesaria@spit.ac.in",
+            "niiFileName": "",
+            "mappedDoctorEmail": "",
+            "quadrant": "",
+            "perc": "",
+            "staticImages": []
+        },
+        {
+            "name": "Sania Juthani",
+            "email": "sania.juthani@spit.ac.in",
+            "niiFileName": "",
+            "mappedDoctorEmail": "",
+            "quadrant": "",
+            "perc": "",
+            "staticImages": []
+        }
+    ],
+    "doctors": [
+        {
+            "name": "Atharva Mohite",
+            "email": "atharva.mohite@spit.ac.in",
+            "patientEmails": ["aditya.motwani@spit.ac.in",
+                "deep.nayak@spit.ac.in",
+                "ameya.jangam@spit.ac.in",
+                "pranav.nair@spit.ac.in",
+                "shashank.sarma@spit.ac.in",
+                "sumeet.haldipur@spit.ac.in",
+                "yashvi.patil@spit.ac.in",
+                "manthan.anklesaria@spit.ac.in"
+            ]
+        },
+        {
+            "name": "Abha Gawande",
+            "email": "abha.gawande@spit.ac.in",
+            "patientEmails": ["bhushan.patil@spit.ac.in",
+                "naresh.gandhi@spit.ac.in",
+                "rohit.mody@spit.ac.in",
+                "manthan.juthani@spit.ac.in",
+                "bhishan.patel@spit.ac.in",
+                "bangam.jangam@spit.ac.in",
+                "riya.nagaria@spit.ac.in",
+                "sania.juthani@spit.ac.in"
+            ]
+        },
+        {
+            "name": "Param Patil",
+            "email": "param.patil@spit.ac.in",
+            "patientEmails": ["nidhi.haldipur@spit.ac.in",
+                "jeenal.todi@spit.ac.in",
+                "prachi.sarma@spit.ac.in",
+                "neha.raheja@spit.ac.in",
+                "krish.hegde@spit.ac.in",
+                "abhishek.hawa@spit.ac.in",
+                "yash.brid@spit.ac.in"
+            ]
+        }
+    ]
+}
