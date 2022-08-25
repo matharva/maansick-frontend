@@ -1,10 +1,8 @@
 import axios from "axios";
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { BACKEND_URL } from "../constants";
 import Header from "../partials/Header";
-import { useAuth } from "../context/AuthContext";
-import Header from "../partials/Header";
+// import Header from "../partials/Header";
 
 const Upload = ({ bulkFiles, setBulkFiles, setSVMResult }) => {
   const navigate = useNavigate();
