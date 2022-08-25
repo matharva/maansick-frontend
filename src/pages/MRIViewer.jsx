@@ -10,6 +10,9 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
   const navigate = useNavigate();
 
   const [category, setCategory] = useState("ok");
+  const [score, setScore] = useState(0);
+  const [humanType, setHumanType] = useState("pat");
+
 
   const textColor = {
     default: "text-black",
@@ -18,6 +21,8 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
     danger: "text-red-500",
     // ...
   };
+
+  console.log("Score of SVM", SVMResult, SVMResult?.score?.toFixed(2))
 
   // Side Effects
   useEffect(() => {
@@ -37,6 +42,11 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
         });
     }
   }, [bulkFiles]);
+
+  useEffect(()=>{
+    setScore(SVMResult.score);
+    setHumanType(localStorage.getItem('type'));
+  },[])
 
   const params = useMemo(() => {
     const p = [];
@@ -67,13 +77,16 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
         style={{ flex: "0.5", height: "100%" }}
       >
         <div className="flex items-center justify-center flex-col">
-          <div className="text-4xl font-bold text-center ">Results</div>
-          {SVMResult ? (
+          <div className="text-4xl font-bold text-center ">Results: 
+          {/* {SVMResult?.score?.toFixed(2)} */}
+          </div>
+          {SVMResult?.score? (
             // <div className="text-9xl py-10 font-bold">`${SVMResult}%`</div>
             <div className={`text-9xl py-10 font-bold ${textColor[category]}`}>
               <CountUp
                 isCounting
-                end={90.56}
+                end={score}
+                // end={90.57}
                 duration={3.2}
                 onUpdate={(currentValue) => {
                   if (currentValue <= 60) {
@@ -90,12 +103,18 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
           ) : (
             <div className="my-4">Fetching results...</div>
           )}
-          <button
+          {humanType == "doc"?(
+            <button
             // onClick={() => navigate("/loading")}
             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-bold rounded-lg text-lg px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
           >
             View Detailed Results
           </button>
+          ):(
+            <>
+            </>
+          )}
+          
         </div>
       </div>
       </div>
@@ -103,7 +122,7 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
       <div>
         <Roadmap/>
           {/* {
-            localStorage.getItem("name") == "motwani"? <div><Roadmap/></div>: <div></div>
+            localStorag.getItem("name") == "motwani"? <div><Roadmap/></div>: <div></div>
           } */}
       </div>
     </div>

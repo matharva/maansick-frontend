@@ -50,7 +50,7 @@ const Upload = ({ bulkFiles, setBulkFiles, setSVMResult }) => {
       .then((response) => {
         console.log("res from SVM model: ", response);
         let data = response.data;
-        setSVMResult(data.score);
+        setSVMResult(data);
         navigate("/mri");
       })
       .catch((err) => {
