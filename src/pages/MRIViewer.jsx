@@ -4,6 +4,8 @@ import { BACKEND_URL, IS_CNN, IS_SVM } from "../constants";
 import axios from "axios";
 import { CountUp } from "use-count-up";
 import Roadmap from './Roadmap';
+
+
 const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
   const navigate = useNavigate();
 
