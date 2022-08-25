@@ -97,6 +97,7 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
         </div>
       </div>
       </div>
+      
       <div>
         <Roadmap/>
           {/* {
