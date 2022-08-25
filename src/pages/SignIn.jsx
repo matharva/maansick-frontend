@@ -13,7 +13,12 @@ const handleAuth = () =>{
   localStorage.setItem("email",email);
   localStorage.setItem("phoneNumber",phoneNumber);
   localStorage.setItem("type", humanType);
-navigate("/mri");
+  if (humanType == 'pat'){
+    navigate('/upload')
+  }
+  else{
+    navigate("/doctor/patients");
+  }
 }
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
