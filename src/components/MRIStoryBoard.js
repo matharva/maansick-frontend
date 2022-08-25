@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import IMG from "../images/fa.png";
 
-SwiperCore.use([Autoplay]);
+// SwiperCore.use([Autoplay]);
 
 const renderSliderCards = () => {
   const items = [
@@ -34,7 +34,7 @@ const renderSliderCards = () => {
         <SwiperSlide
           className={`flex items-center justify-center ${item.color} rounded-md`}
         >
-          {/* {item.name} */}
+          {item.name}
           <img src={item.img} alt="" />
         </SwiperSlide>
       </>
@@ -42,9 +42,10 @@ const renderSliderCards = () => {
   });
 };
 
-const MRIStoryBoard = () => {
+const MRIStoryBoardSwiper = () => {
   return (
     <div className="flex-row h-max">
+      <div className="">Feature Learning</div>
       <Swiper
         effect={"cards"}
         // autoplay={{
@@ -61,6 +62,37 @@ const MRIStoryBoard = () => {
           <div className="div">Load 3D model</div>
         </SwiperSlide>
       </Swiper>
+    </div>
+  );
+};
+
+const MRIStoryBoard = () => {
+  const res = {
+    output: [
+      "/static/images/p06871_bmatrix_1000.nii.gz_0_3.png",
+      "/static/images/p06871_bmatrix_1000.nii.gz_2_3.png",
+      "/static/images/p06871_bmatrix_1000.nii.gz_4_3.png",
+      "/static/images/p06871_bmatrix_1000.nii.gz_7_3.png",
+    ],
+    quads: {
+      diseases: [],
+      lobes: [],
+      quad: "C",
+      suggestions: [],
+    },
+  };
+  return (
+    <div className="flex h-screen items-center justify-center flex-col">
+      <div className="font-bold text-3xl mb-4">Feature Learning</div>
+      <div className="flex" style={{ width: "75%" }}>
+        {res?.output?.map(() => {
+          return (
+            <div className="">
+              <img src={IMG} alt="" />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
