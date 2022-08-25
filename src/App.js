@@ -17,6 +17,8 @@ import Upload from "./pages/Upload";
 import Loading from "./pages/Loading";
 import Roadmap from "./pages/Roadmap";
 import ThreeModel from "./components/ThreeModel";
+import Patients from "./pages/Patients";
+import PatientInfo from "./pages/PatientInfo";
 
 function App() {
   const location = useLocation();
@@ -83,6 +85,8 @@ function App() {
 
         {/*Patient-Roadmap*/}
         <Route path="/roadmap" element={<Roadmap />} />
+        <Route path="/patients" element={<Patients />} />
+        <Route path="/patients/info" element={<PatientInfo />} />
       </Routes>
     </div>
   );

@@ -50,36 +50,6 @@ const Upload = ({ bulkFiles, setBulkFiles, setSVMResult }) => {
     <div className="flex flex-col items-center justify-center h-screen">
       <div className="text-6xl font-bold mb-10">Upload page</div>
       <div className="flex flex-col items-start justify-center">
-        {/* <div className="flex flex-col">
-          <label className="text-3xl font-bold">Upload NII file:</label>
-          <input
-            required
-            type="file"
-            onChange={selectFile}
-            className="mt-4 items-center"
-          />
-        </div>
-        <br />
-        <div className="flex flex-col mt-4">
-          <label className="text-3xl font-bold">Upload Bvec file:</label>
-          <input
-            required
-            type="file"
-            onChange={selectBVecFile}
-            className="mt-4"
-          />
-        </div>
-        <br />
-        <div className="flex flex-col mt-4">
-          <label className="text-3xl font-bold">Upload BVal file:</label>
-          <input
-            required
-            type="file"
-            onChange={selectBValFile}
-            className="mt-4"
-          />
-        </div>
-        <br /> */}
         <div className="flex flex-col mt-4">
           <label className="text-3xl font-bold">Upload Bulk files:</label>
           <input
