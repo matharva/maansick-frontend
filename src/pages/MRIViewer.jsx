@@ -98,9 +98,10 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
       </div>
       </div>
       <div>
-          {
+        <Roadmap/>
+          {/* {
             localStorage.getItem("name") == "motwani"? <div><Roadmap/></div>: <div></div>
-          }
+          } */}
       </div>
     </div>
   );

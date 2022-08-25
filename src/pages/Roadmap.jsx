@@ -26,6 +26,7 @@ function Roadmap() {
         {/* Roadmap */}
         <div className="roadmap-box" style={{position: "absolute", top: "40px", left: "20px", padding: "20px",
     right: "30%"}}>
+        <time class="text-lg font-bold text-gray-900 dark:text-black-1200">How can I help myself?</time>
         <ol class="relative border-l border-gray-200 dark:border-gray-700">    
             {/* 1 */}
             <li class="mb-10 ml-4">
