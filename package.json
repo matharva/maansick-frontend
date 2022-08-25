@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
     "axios": "^0.27.2",
+    "concurrently": "^7.3.0",
     "flowbite": "^1.5.2",
     "json-server": "^0.17.0",
     "path": "^0.12.7",
@@ -31,6 +32,8 @@
   },
   "scripts": {
     "start": "set PORT=3006 && react-scripts start",
+    "start-loader": "cd loader && yarn dev",
+    "dev": "concurrently --kill-others \"npm run start-loader\" \"npm run start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

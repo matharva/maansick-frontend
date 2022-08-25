@@ -1,20 +1,23 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-// import "axios";
 
 const Loading = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    setTimeout(() => {
-      navigate("/mri-stages");
-    }, 2000);
-
-    // setInterval(() => {}, 3000);
+    // setTimeout(() => {
+    //   navigate("/mri-stages");
+    // }, 2000);
   }, []);
+
+  useEffect(() => {
+    console.log("Here");
+  }, []);
+
   return (
     <>
-      {/* <div id="app"></div>
+      <div id="app"></div>
+      {/* 
       <button
         className="mt-10"
         onClick={() => navigate("/mri-stages")}
