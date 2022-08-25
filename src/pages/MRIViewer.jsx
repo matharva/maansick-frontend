@@ -4,6 +4,8 @@ import { BACKEND_URL, IS_CNN, IS_SVM } from "../constants";
 import axios from "axios";
 import { CountUp } from "use-count-up";
 import Roadmap from './Roadmap';
+import Header from "../partials/Header";
+
 
 const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
   const navigate = useNavigate();
@@ -44,7 +46,7 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
 
   useEffect(()=>{
     setScore(SVMResult.score);
-    setHumanType(localStorage.getItem('type'));
+    setHumanType(localStorage?.getItem('type'));
   },[])
 
   const params = useMemo(() => {
@@ -65,6 +67,8 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
   }, [params]);
 
   return (
+    <>
+   <Header/>
     <div style={{padding:"30px"}}>
       <div style = {{textAlign: "center"}}>
         <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4"
@@ -129,13 +133,19 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
 
       {/* Motion */}
       <div>
-        <Roadmap/>
+        {humanType == "pat"?(
+            <Roadmap/>
+          ):(
+            <></>
+        )}
+
           {/* {
             localStorag.getItem("name") == "motwani"? <div><Roadmap/></div>: <div></div>
           } */}
       </div>
   
     </div>
+     </>
   );
 };
 

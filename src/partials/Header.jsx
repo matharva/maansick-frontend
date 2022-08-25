@@ -13,6 +13,14 @@ function Header() {
     return () => window.removeEventListener("scroll", scrollHandler);
   }, [top]);
 
+  const logOut = ()=>{
+                        localStorage.setItem("name", "");
+                        localStorage.setItem("type", "");
+                        localStorage.setItem("email", "");
+                        localStorage.setItem("phoneNumber", "");
+
+                      }
+
   return (
     <header
       className={`fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${
@@ -60,22 +68,68 @@ function Header() {
           <nav className="flex flex-grow">
             <ul className="flex flex-grow justify-end flex-wrap items-center">
               <li>
-                <Link
-                  to="/signin"
-                  className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3"
-                >
-                  <span>Sign in</span>
-                  <svg
-                    className="w-3 h-3 fill-current text-gray-400 flex-shrink-0 ml-2 -mr-1"
-                    viewBox="0 0 12 12"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z"
-                      fillRule="nonzero"
-                    />
-                  </svg>
-                </Link>
+                {
+                  localStorage?.getItem("name") == null?(
+                    <div>
+                    <Link
+                      to="/signin"
+                      className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3"
+                     
+                    >
+                      <span>Sign in</span>
+                      <svg
+                        className="w-3 h-3 fill-current text-gray-400 flex-shrink-0 ml-2 -mr-1"
+                        viewBox="0 0 12 12"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z"
+                          fillRule="nonzero"
+                        />
+                      </svg>
+                    </Link>
+                    </div>
+                    
+                  ):(
+                    <div onClick={()=>{
+                      console.log("heheheh")
+                        localStorage.removeItem("name", "");
+                        localStorage.removeItem("type", "");
+                        localStorage.removeItem("email", "");
+                        localStorage.removeItem("phoneNumber", "");
+                        // localStorage.clear();
+
+                      }}>
+                 <Link
+                      to="/"
+                      className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3"
+                      //  onClick={()=>{
+                      //   localStorage..setItem("name", "");
+                      //   localStorage..setItem("type", "");
+                      //   localStorage..setItem("email", "");
+                      //   localStorage..setItem("phoneNumber", "");
+
+                      // }}
+                      // onClick={logOut}
+                    >
+                      <span>Sign Out</span>
+                      <svg
+                        className="w-3 h-3 fill-current text-gray-400 flex-shrink-0 ml-2 -mr-1"
+                        viewBox="0 0 12 12"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z"
+                          fillRule="nonzero"
+                        />
+                      </svg>
+                    </Link>
+                    </div>
+   
+                  )
+                }
+                
+                
               </li>
             </ul>
           </nav>

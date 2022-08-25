@@ -43,8 +43,8 @@ const Upload = ({ bulkFiles, setBulkFiles, setSVMResult }) => {
       .then((response) => {
         console.log("res from SVM model: ", response);
         let data = response.data;
-        setSVMResult(data.score);
-        if (localStorage.getItem("email") != null)
+        setSVMResult(data);
+        if (localStorage?.getItem("email") != null)
           axios
             .get(
               "http://localhost:4000/patients/" + localStorage.getItem("email")
@@ -55,7 +55,7 @@ const Upload = ({ bulkFiles, setBulkFiles, setSVMResult }) => {
               tempData.perc = data.score;
               axios.put(
                 "http://localhost:4000/patients/" +
-                  localStorage.getItem("email"),
+                  localStorage?.getItem("email"),
                 tempData
               );
             });
@@ -69,7 +69,7 @@ const Upload = ({ bulkFiles, setBulkFiles, setSVMResult }) => {
   };
   return (
     <>
-      {localStorage.getItem("name") == null ? <Header /> : <></>}
+      <Header />
 
       <div className="flex flex-col items-center justify-center h-screen">
         {/* <div className="text-6xl font-bold mb-10">Upload page</div> */}
