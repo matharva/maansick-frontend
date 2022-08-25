@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BACKEND_URL } from "../constants";
 
@@ -34,16 +34,21 @@ const Upload = ({ bulkFiles, setBulkFiles, setSVMResult }) => {
 
     const SVMendpoint = BACKEND_URL + "/evaluate";
 
+    navigate("/loading");
+    console.log("After redirect");
+
     axios
       .post(SVMendpoint, formData)
       .then((response) => {
-        console.log("res: ", response);
-        let data = response.data
+        console.log("res from SVM model: ", response);
+        let data = response.data;
         setSVMResult(data.score);
         navigate("/mri");
       })
       .catch((err) => {
         console.log(err);
+        console.log("Backend is not running");
+        navigate("/mri");
       });
   };
   return (
