@@ -20,6 +20,7 @@ import ThreeModel from "./components/ThreeModel";
 import Patients from "./pages/Patients";
 import PatientInfo from "./pages/PatientInfo";
 import { AuthProvider } from "./context/AuthContext";
+import Header from "./partials/Header";
 
 function App() {
   const location = useLocation();
@@ -51,6 +52,7 @@ function App() {
 
   return (
     <div className="">
+      <Header />
       <AuthProvider>
         <Routes>
           <Route exact path="/" element={<Home />} />
