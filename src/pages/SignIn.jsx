@@ -1,9 +1,20 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import loginData from '../assets/logins.json'
 import Header from '../partials/Header';
-
 function SignIn() {
+const navigate = useNavigate();
+const[email,setEmail] = useState("")
+const[humanType,setHumanType] = useState("")
+const[name,setName] = useState("")
+const[phoneNumber,setPhoneNumber] = useState("")
+const handleAuth = () =>{
+  localStorage.setItem("name",name);
+  localStorage.setItem("email",email);
+  localStorage.setItem("phoneNumber",phoneNumber);
+  localStorage.setItem("type", humanType);
+navigate("/mri");
+}
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
 
@@ -19,28 +30,50 @@ function SignIn() {
 
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-                <h1 className="h1">Welcome back. We exist to make entrepreneurism easier.</h1>
+                <h1 className="h1">Welcome back to Maansick.</h1>
               </div>
 
               {/* Form */}
               <div className="max-w-sm mx-auto">
-                <form>
+                <form onSubmit = {handleAuth}>
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                       <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="email">Email</label>
-                      <input id="email" type="email" className="form-input w-full text-gray-800" placeholder="Enter your email address" required />
+                      <input id="email" type="email" className="form-input w-full text-gray-800" placeholder="Enter your email address" required onChange={(e)=>{setEmail(e.target.value)}}/>
                     </div>
                   </div>
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
-                      <div className="flex justify-between">
+                      <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="email">Name</label>
+                      <input type="text" className="form-input w-full text-gray-800" placeholder="Enter your name" required onChange={(e)=>{setName(e.target.value)}}/>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap -mx-3 mb-4">
+                    <div className="w-full px-3">
+                      <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="phoneNumber">Phone Number</label>
+                      <input id="phoneNum" type="number" className="form-input w-full text-gray-800" placeholder="Enter your phone number" required onChange={(e)=>{setPhoneNumber(e.target.value)}}/>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap -mx-3 mb-4">
+                    <div className="w-full px-3">
+                      {/* <div className="flex justify-between">
                         <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="password">Password</label>
                         <Link to="/reset-password" className="text-sm font-medium text-blue-600 hover:underline">Having trouble signing in?</Link>
-                      </div>
+                      </div> */}
+                      <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="phoneNumber">Password</label>
                       <input id="password" type="password" className="form-input w-full text-gray-800" placeholder="Enter your password" required />
                     </div>
                   </div>
                   <div className="flex flex-wrap -mx-3 mb-4">
+                    <div className="w-full px-3">
+                      {/* <div className="flex justify-between">
+                        <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="password">Password</label>
+                        <Link to="/reset-password" className="text-sm font-medium text-blue-600 hover:underline">Having trouble signing in?</Link>
+                      </div> */}
+                      <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="type">Select type</label>
+                    </div>
+                  </div>
+                  {/* <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                       <div className="flex justify-between">
                         <label className="flex items-center">
@@ -49,19 +82,30 @@ function SignIn() {
                         </label>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
+                  <div className="flex flex-wrap -mx-3 mt-6 justify-center items-center">
+                    
+                    <div className="flex w-1/2 px-3 gap-2">
+                    <input type='radio' name = 'value' onChange={()=>{setHumanType('doc')}} />
+                    <label for="humanType">Doctor</label>
+                    </div>
+                    <div className="flex w-1/2 px-3 gap-2">
+                    <input type='radio' name = 'value' onChange={()=>{setHumanType('pat')}}/>
+                    <label for="humanType">Patient</label>
+                    </div>
+                  </div>                  
                   <div className="flex flex-wrap -mx-3 mt-6">
                     <div className="w-full px-3">
                       <button className="btn text-white bg-blue-600 hover:bg-blue-700 w-full">Sign in</button>
                     </div>
                   </div>
                 </form>
-                <div className="flex items-center my-6">
+                {/* <div className="flex items-center my-6">
                   <div className="border-t border-gray-300 flex-grow mr-3" aria-hidden="true"></div>
                   <div className="text-gray-600 italic">Or</div>
                   <div className="border-t border-gray-300 flex-grow ml-3" aria-hidden="true"></div>
-                </div>
-                <form>
+                </div> */}
+                {/* <form>
                   <div className="flex flex-wrap -mx-3 mb-3">
                     <div className="w-full px-3">
                       <button className="btn px-0 text-white bg-gray-900 hover:bg-gray-800 w-full relative flex items-center">
@@ -82,10 +126,10 @@ function SignIn() {
                       </button>
                     </div>
                   </div>
-                </form>
-                <div className="text-gray-600 text-center mt-6">
+                </form> */}
+                {/* <div className="text-gray-600 text-center mt-6">
                   Don’t you have an account? <Link to="/signup" className="text-blue-600 hover:underline transition duration-150 ease-in-out">Sign up</Link>
-                </div>
+                </div> */}
               </div>
 
             </div>
