@@ -38,7 +38,8 @@ const Upload = ({ bulkFiles, setBulkFiles, setSVMResult }) => {
       .post(SVMendpoint, formData)
       .then((response) => {
         console.log("res: ", response);
-        setSVMResult(response);
+        let data = response.data
+        setSVMResult(data.score);
         navigate("/mri");
       })
       .catch((err) => {

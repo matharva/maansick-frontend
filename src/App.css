@@ -5,3 +5,21 @@
 .helper1 {
   border: 2px solid yellowgreen;
 }
+
+.container{
+  position: absolute;
+  top: 10%;
+  left: 23%;
+  width: 50%;
+}
+  
+.text{
+  display: inline;
+  width: 100%;
+}
+  
+.read-or-hide{
+  color: rgb(122, 215, 240);
+  cursor: pointer;
+  font-weight: bolder;
+}

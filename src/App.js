@@ -15,7 +15,7 @@ import ResetPassword from "./pages/ResetPassword";
 import MRIViewer from "./pages/MRIViewer";
 import Upload from "./pages/Upload";
 import Loading from "./pages/Loading";
-
+import Roadmap from "./pages/Roadmap";
 import ThreeModel from "./components/ThreeModel";
 import Patients from "./pages/Patients";
 import PatientInfo from "./pages/PatientInfo";
@@ -82,6 +82,9 @@ function App() {
         <Route path="/three" element={<ThreeModel />} />
         <Route path="/loading" element={<Loading />} />
         <Route path="/mri-stages" element={<MRIStory />} />
+
+        {/*Patient-Roadmap*/}
+        <Route path="/roadmap" element={<Roadmap />} />
         <Route path="/patients" element={<Patients />} />
         <Route path="/patients/info" element={<PatientInfo />} />
       </Routes>
