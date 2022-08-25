@@ -3,10 +3,10 @@
     {
       "name": "Aditya Motwani",
       "id": "aditya.motwani@spit.ac.in",
-      "niiFileName": "p06873_bmatrix_1000.nii.gz",
+      "niiFileName": "",
       "mappedDoctorEmail": "",
       "quadrant": "",
-      "perc": 94.43331453392756,
+      "perc": "",
       "staticImages": []
     },
     {
@@ -213,41 +213,41 @@
       "name": "Atharva Mohite",
       "id": "atharva.mohite@spit.ac.in",
       "patientEmails": [
-        "aditya.motwani@spit.ac.in",
-        "deep.nayak@spit.ac.in",
-        "ameya.jangam@spit.ac.in",
-        "pranav.nair@spit.ac.in",
-        "shashank.sarma@spit.ac.in",
-        "sumeet.haldipur@spit.ac.in",
-        "yashvi.patil@spit.ac.in",
-        "manthan.anklesaria@spit.ac.in"
+        {"id": "aditya.motwani@spit.ac.in", "status": "pending", "feedback": ""},
+        {"id": "deep.nayak@spit.ac.in", "status": "pending", "feedback": ""},
+        {"id": "ameya.jangam@spit.ac.in", "status": "pending", "feedback": ""},
+        {"id": "pranav.nair@spit.ac.in", "status": "pending", "feedback": ""},
+        {"id": "shashank.sarma@spit.ac.in", "status": "pending", "feedback": ""},
+        {"id": "sumeet.haldipur@spit.ac.in", "status": "pending", "feedback": ""},
+        {"id": "yashvi.patil@spit.ac.in", "status": "pending", "feedback": ""},
+        {"id": "manthan.anklesaria@spit.ac.in", "status": "pending", "feedback": ""}
       ]
     },
     {
       "name": "Abha Gawande",
       "id": "abha.gawande@spit.ac.in",
       "patientEmails": [
-        "bhushan.patil@spit.ac.in",
-        "naresh.gandhi@spit.ac.in",
-        "rohit.mody@spit.ac.in",
-        "manthan.juthani@spit.ac.in",
-        "bhishan.patel@spit.ac.in",
-        "bangam.jangam@spit.ac.in",
-        "riya.nagaria@spit.ac.in",
-        "sania.juthani@spit.ac.in"
+        {"id": "bhushan.patil@spit.ac.in", "status": "pending", "feedback": ""},
+        {"id": "naresh.gandhi@spit.ac.in", "status": "pending", "feedback": ""},
+        {"id": "rohit.mody@spit.ac.in", "status": "pending", "feedback": ""},
+        {"id": "manthan.juthani@spit.ac.in", "status": "pending", "feedback": ""},
+        {"id": "bhishan.patel@spit.ac.in", "status": "pending", "feedback": ""},
+        {"id": "bangam.jangam@spit.ac.in", "status": "pending", "feedback": ""},
+        {"id": "riya.nagaria@spit.ac.in", "status": "pending", "feedback": ""},
+        {"id": "sania.juthani@spit.ac.in", "status": "pending", "feedback": ""}     
       ]
     },
     {
       "name": "Param Patil",
       "id": "param.patil@spit.ac.in",
       "patientEmails": [
-        "nidhi.haldipur@spit.ac.in",
-        "jeenal.todi@spit.ac.in",
-        "prachi.sarma@spit.ac.in",
-        "neha.raheja@spit.ac.in",
-        "krish.hegde@spit.ac.in",
-        "abhishek.hawa@spit.ac.in",
-        "yash.brid@spit.ac.in"
+        {"id": "nidhi.haldipur@spit.ac.in", "status": "pending", "feedback": ""},
+        {"id": "jeenal.todi@spit.ac.in", "status": "pending", "feedback": ""},
+        {"id": "prachi.sarma@spit.ac.in", "status": "pending", "feedback": ""},
+        {"id": "neha.raheja@spit.ac.in", "status": "pending", "feedback": ""},
+        {"id": "krish.hegde@spit.ac.in", "status": "pending", "feedback": ""},
+        {"id": "abhishek.hawa@spit.ac.in", "status": "pending", "feedback": ""},
+        {"id": "yash.brid@spit.ac.in", "status": "pending", "feedback": ""} 
       ]
     }
   ]
