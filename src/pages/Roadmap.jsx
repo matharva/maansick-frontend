@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import "../css/additional-styles/roadmap.css";
 import { motion } from "framer-motion";
 
@@ -47,6 +46,7 @@ function Roadmap() {
           </time>
         </motion.h1>
       </div>
+
       {/* Roadmap */}
       <div
         className="roadmap-box"
