@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { BACKEND_URL } from "../constants";
+import Header from "../partials/Header";
 import { useAuth } from "../context/AuthContext";
 import Header from "../partials/Header";
 
@@ -55,7 +56,7 @@ const Upload = ({ bulkFiles, setBulkFiles, setSVMResult }) => {
   };
   return (
     <>
-      <Header />
+      {localStorage.getItem("name") == null ? <Header /> : <></>}
 
       <div className="flex flex-col items-center justify-center h-screen">
         {/* <div className="text-6xl font-bold mb-10">Upload page</div> */}
@@ -130,7 +131,7 @@ const Upload = ({ bulkFiles, setBulkFiles, setSVMResult }) => {
           <button
             type="submit"
             onClick={sendFilesToBackend}
-            class="mt-8 text-white h-100 bg-blue-700 hover:bg-blue-800  text-center focus:ring-4 focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+            class="mt-8 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
           >
             Visualize image
           </button>
