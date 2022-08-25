@@ -1,16 +1,30 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 // Assets
 import medical_image_preview from "../assets/medical_image_preview.jpg";
-
+import Speedometer, {
+  Background,
+  Arc,
+  Needle,
+  Progress,
+  Marks,
+  Indicator,
+  DangerPath
+}from 'react-speedometer';
+import { CountUp } from 'use-count-up'
 const MRIViewer = () => {
   const navigate = useNavigate();
-
+  const textColor = {
+    default: 'text-black',
+    'ok': 'text-green-500',
+    'warn': 'text-yellow-500',
+    'danger': 'text-red-500',
+    // ...
+  }
   // States
   const [selectedFile, setSelectedFile] = useState("");
   const [nonDicomImg, setNonDicomImg] = useState(false);
-
+  const[category, setCategory] = useState('ok')
   const params = useMemo(() => {
     const p = [];
     p["kioskMode"] = true;
@@ -82,7 +96,23 @@ const MRIViewer = () => {
       >
         <div className="flex items-center justify-center flex-col helper">
           <div className="text-4xl font-bold text-center ">Results</div>
-          <div className="text-9xl py-10 font-bold">90%</div>
+          {/* <div className="text-9xl py-10 font-bold">90%</div> */}
+          <div className={`text-9xl py-10 font-bold ${textColor[category]}`}>
+          <CountUp isCounting end={90.56} duration={3.2}  onUpdate = {(currentValue)=>{
+            if(currentValue <=60)
+            {
+              setCategory('ok');
+            }
+            else if (currentValue > 60 && currentValue < 80)
+            {
+              setCategory('warn');
+            }
+            else
+            {
+              setCategory('danger');
+            }
+          }}/>%
+          </div>
           <button
             onClick={() => navigate("/loading")}
             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-bold rounded-lg text-lg px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
@@ -90,6 +120,20 @@ const MRIViewer = () => {
             View Detailed Results
           </button>
         </div>
+  {/* <Speedometer
+    value={96}
+    max={100}
+    fontFamily='Helvetica'
+
+  >
+    <Background />
+    <Arc arcWidth={50}/>
+    <Needle/>
+    <DangerPath/>
+    <Progress/>
+    <Marks/>
+    <Indicator/>
+  </Speedometer> */}
       </div>
     </div>
   );
