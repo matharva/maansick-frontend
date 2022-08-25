@@ -20,7 +20,7 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
   // Side Effects
   useEffect(() => {
     const data = {
-      file_name: bulkFiles["nii"].name,
+      file_name: bulkFiles?.nii?.name,
     };
     console.log("CNN Data: ", data);
     if (IS_CNN) {
