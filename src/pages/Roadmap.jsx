@@ -24,7 +24,7 @@ function Roadmap() {
   return (
     <div>
         {/* Roadmap */}
-        <div className="roadmap-box" style={{position: "absolute", top: "800px", left: "20px", padding: "20px",
+        <div className="roadmap-box" style={{position: "absolute", top: "40px", left: "20px", padding: "20px",
     right: "30%"}}>
         <ol class="relative border-l border-gray-200 dark:border-gray-700">    
             {/* 1 */}
