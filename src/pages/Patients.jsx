@@ -1,9 +1,22 @@
+import axios from "axios";
 import React from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../partials/Header";
 
 const Patients = () => {
   const navigate = useNavigate();
+  const [patients, setPatients] = useState();
+  
+  useEffect(() => {
+    axios.get("http://localhost:4000/doctors/" + localStorage.getItem("email")).then((res) => {
+      setPatients(res.data.patientEmails)
+    })
+  }, [])
+
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
 
   return (
     <>
@@ -23,7 +36,29 @@ const Patients = () => {
               </div>
               <div class="px-64 pt-8 pb-24 mx-auto">
                 <div class="flex flex-wrap -m-2">
-                  <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+
+                  {patients && patients.map((element) => {
+                    return  <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+                      <div
+                        class="h-full flex items-center border-gray-200 border p-4 rounded-lg cursor-pointer"
+                        onClick={() => navigate("/doctor/patients/info?email="+element.id)}
+                      >
+                        <img
+                          alt="team"
+                          class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                          src="https://dummyimage.com/80x80"
+                        />
+                        <div class="flex-grow">
+                          <h2 class="text-gray-900 title-font font-medium">
+                            {capitalizeFirstLetter(element.id.split('.')[0]) + " " + capitalizeFirstLetter(element.id.split('.')[1].slice(0, -5))}
+                          </h2>
+                          <p class="text-gray-500">{capitalizeFirstLetter(element.status)}</p>
+                        </div>
+                      </div>
+                    </div>
+                  })}
+
+                  {/* <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
                     <div
                       class="h-full flex items-center border-gray-200 border p-4 rounded-lg cursor-pointer"
                       onClick={() => navigate("/doctor/patients/info")}
@@ -160,7 +195,7 @@ const Patients = () => {
                         <p class="text-gray-500">Product Manager</p>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </section>

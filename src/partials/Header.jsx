@@ -13,14 +13,6 @@ function Header() {
     return () => window.removeEventListener("scroll", scrollHandler);
   }, [top]);
 
-  const logOut = ()=>{
-                        localStorage.setItem("name", "");
-                        localStorage.setItem("type", "");
-                        localStorage.setItem("email", "");
-                        localStorage.setItem("phoneNumber", "");
-
-                      }
-
   return (
     <header
       className={`fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${
@@ -103,14 +95,6 @@ function Header() {
                  <Link
                       to="/"
                       className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3"
-                      //  onClick={()=>{
-                      //   localStorage..setItem("name", "");
-                      //   localStorage..setItem("type", "");
-                      //   localStorage..setItem("email", "");
-                      //   localStorage..setItem("phoneNumber", "");
-
-                      // }}
-                      // onClick={logOut}
                     >
                       <span>Sign Out</span>
                       <svg
@@ -131,8 +115,8 @@ function Header() {
                 
                 
               </li>
-            </ul>
-          </nav>
+              </ul>
+              </nav>
         </div>
       </div>
     </header>
