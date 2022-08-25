@@ -24,7 +24,7 @@ function Roadmap() {
   return (
     <div>
       {/* motion */}
-      <div>
+      <div className="bg-white">
         <motion.h1
           initial={{ x: -1000 }}
           animate={{ x: 0 }}

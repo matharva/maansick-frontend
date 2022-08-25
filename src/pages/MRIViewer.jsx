@@ -67,7 +67,7 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
   }, [params]);
 
   return (
-    <>
+    <div className="mriViewerBg">
    <Header/>
     <div style={{padding:"30px"}}>
       <div style = {{textAlign: "center"}}>
@@ -145,7 +145,7 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
       </div>
   
     </div>
-     </>
+     </div>
   );
 };
 
