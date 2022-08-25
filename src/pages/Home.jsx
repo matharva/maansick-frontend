@@ -21,13 +21,13 @@ function Home() {
       <Header />
 
       {/*  Page content */}
-      <main className="flex-grow">
+      <main className="flex-grow ">
         {/*  Page sections */}
         <HeroHome />
         <FeaturesHome />
         <FeaturesBlocks />
-        <Testimonials />
-        <Newsletter />
+        {/* <Testimonials /> */}
+        {/* <Newsletter /> */}
       </main>
 
       {/*  Site footer */}
