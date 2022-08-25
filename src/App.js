@@ -52,7 +52,6 @@ function App() {
 
   return (
     <div className="">
-      <Header />
       <AuthProvider>
         <Routes>
           <Route exact path="/" element={<Home />} />
