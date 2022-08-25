@@ -51,6 +51,14 @@ const Upload = ({ bulkFiles, setBulkFiles, setSVMResult }) => {
         console.log("res from SVM model: ", response);
         let data = response.data;
         setSVMResult(data.score);
+        if(localStorage.getItem("email") != null)
+          axios.get("http://localhost:3000/patients/"+localStorage.getItem("email")).then((res) => {
+            let tempData = res.data
+            tempData.niiFileName = bulkFiles["nii"].name
+            tempData.perc = data.score
+            axios.put("http://localhost:3000/patients/"+localStorage.getItem("email"), tempData)
+
+          })
         navigate("/mri");
       })
       .catch((err) => {
