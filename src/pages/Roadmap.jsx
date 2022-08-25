@@ -4,6 +4,7 @@ import "../css/additional-styles/roadmap.css";
 import { motion } from 'framer-motion';
 import "../css/additional-styles/roadmap.css";
 
+
 const ReadMore = ({ children }) => {
   const text = children;
   const [isReadMore, setIsReadMore] = useState(true);
@@ -40,7 +41,8 @@ function Roadmap() {
       </div>
 
       {/* Roadmap */}
-      <div className="roadmap-box" style={{position: "absolute", top: "800px", left: "20px", padding: "20px", paddingTop: "20px",right: "35%"}}>
+
+      <div className="roadmap-box" style={{position: "absolute", top: "940px", left: "20px", padding: "20px", paddingTop: "20px",right: "35%"}}>
         <ol class="relative border-l border-gray-200 dark:border-gray-700"> 
           {/* Group-1(1-2-3-4) */}
           <motion.h1
