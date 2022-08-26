@@ -133,7 +133,7 @@ const PatientInfo = ({ niiFile, SVMResult, bulkFiles }) => {
       </div> */}
     <div className="flex pt-20 items-center justify-center flex-col">
       {email && <div className="font-bold text-3xl mb-4">
-                                {capitalizeFirstLetter(
+                                Patient Name: {capitalizeFirstLetter(
                                   email.split(".")[0]
                                 ) +
                                   " " +
@@ -197,11 +197,11 @@ const PatientInfo = ({ niiFile, SVMResult, bulkFiles }) => {
         </div>
 
                 
-        <div className="grid grid-cols-2 mb-10">
+        <div className="grid grid-cols-2 mb-10 p-10">
           <div className="col-span-1 shadow-2xl">
           <Quiz />
           </div>
-          <div className="col-span-1 shadow-2xl">
+          <div className="col-span-1">
           <PatientFeeback />
           </div>
         </div>
