@@ -232,7 +232,7 @@ const Quiz = () => {
             <tfoot>
               <tr class="font-semibold text-gray-900 dark:text-white bg-gray-600">
                 <th scope="row" class="py-3 px-6 text-base">
-                  Total
+                  Total HADS
                 </th>
                 <td class="py-3 px-6"></td>
                 <td class="py-3 px-6">{calculateHADS(quizData)}</td>
