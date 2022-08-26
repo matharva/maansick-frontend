@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BACKEND_URL, IS_CNN, IS_SVM } from "../constants";
+import { motion } from "framer-motion";
 import axios from "axios";
 import { CountUp } from "use-count-up";
 import Roadmap from './Roadmap';
@@ -67,7 +68,10 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
   }, [params]);
 
   return (
-    <>
+    <motion.div className="mriViewerBg" 
+    initial={{ opacity: 0}}
+    animate={{ opacity: 1}}
+    transition={{ duration: 0.5 }}>
    <Header/>
     <div style={{padding:"30px"}}>
       <div style = {{textAlign: "center"}}>
@@ -82,14 +86,14 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
       {/* MRI viewer */}
       <div className="flex h-screen items-center justify-center">
       <div style={{ flex: "0.5" }}>
-        <div id="papaya_viewer" class="papaya"></div>
+        <div id="papaya_viewer" className="papaya"></div>
       </div>
       <div
         className="flex items-center justify-center"
         style={{ flex: "0.5", height: "100%" }}
       >
-        <div className="flex items-center justify-center flex-col">
-          <div className="text-4xl font-bold text-center ">Results: 
+        <div className="flex items-center justify-center flex-col bg-gray-50 p-10 rounded-xl shadow-xl">
+          <div className="text-4xl font-bold text-center">Results: 
           {/* {SVMResult?.score?.toFixed(2)} */}
           </div>
           {SVMResult?.score? (
@@ -132,7 +136,7 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
       </div>
 
       {/* Motion */}
-      <div>
+      <div className = "mt-5">
         {humanType == "pat"?(
             <Roadmap/>
           ):(
@@ -145,7 +149,7 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
       </div>
   
     </div>
-     </>
+     </motion.div>
   );
 };
 

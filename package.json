@@ -37,7 +37,7 @@
   "scripts": {
     "start": "set PORT=3006 && react-scripts start",
     "start-loader": "cd loader && yarn dev",
-    "start-db": "json-server --watch db.json --port 4000",
+    "start-db": "npx json-server --watch db.json --port 4000",
     "dev": "concurrently --kill-others \"npm run start-loader\" \"npm run start\" \"npm run start-db\"",
     "build": "react-scripts build",
     "test": "react-scripts test",

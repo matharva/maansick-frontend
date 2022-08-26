@@ -3,18 +3,30 @@ import { useNavigate } from "react-router-dom";
 import { BACKEND_URL, IS_CNN, IS_SVM } from "../constants";
 import axios from "axios";
 import { CountUp } from "use-count-up";
+import Header from "../partials/Header";
+import Quiz from "../components/Quiz";
+import MRIStoryBoard from "../components/MRIStoryBoard";
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+
+// import "../styles.css";
 
 const PatientInfo = ({ niiFile, SVMResult, bulkFiles }) => {
   const navigate = useNavigate();
 
   const [category, setCategory] = useState("ok");
 
+  // const swiperRef = useRef(null);
+
   const textColor = {
     default: "text-black",
     ok: "text-green-500",
     warn: "text-yellow-500",
     danger: "text-red-500",
-    // ...
   };
 
   // Side Effects
@@ -62,9 +74,9 @@ const PatientInfo = ({ niiFile, SVMResult, bulkFiles }) => {
 
   return (
     <>
-      {/* <Header /> */}
+      <Header />
 
-      <div className="flex h-screen items-center justify-center">
+      <div className="flex h-screen items-center justify-center pt-12">
         <div style={{ flex: "0.5" }}>
           <div id="papaya_viewer" class="papaya"></div>
         </div>
@@ -107,6 +119,10 @@ const PatientInfo = ({ niiFile, SVMResult, bulkFiles }) => {
           </div>
         </div>
       </div>
+
+      <MRIStoryBoard />
+
+      <Quiz />
     </>
   );
 };

@@ -22,9 +22,13 @@ const ReadMore = ({ children }) => {
 
 function Roadmap() {
   return (
-    <div>
+    <motion.div
+    initial={{ opacity: 0}}
+    animate={{ opacity: 1}}
+    transition={{ duration: 0.5 }}
+    >
       {/* motion */}
-      <div>
+      <div className=" bg-white">
         <motion.h1
           initial={{ x: -1000 }}
           animate={{ x: 0 }}
@@ -42,6 +46,7 @@ function Roadmap() {
               padding: "15px",
               right: "30%",
               fontSize: "30px",
+              fontWeight: "bold"
             }}
           >
             How can I help myself?
@@ -58,8 +63,10 @@ function Roadmap() {
         //   position: "absolute",
         //   top: "860px",
         //   left: "20px",
-        //   padding: "20px",
+          // padding: "20px",
           paddingTop: "5rem",
+          paddingLeft: "2rem",
+          paddingRight: "2rem"
         //   right: "35%",
         }}
       >
@@ -76,11 +83,11 @@ function Roadmap() {
           >
             {/* 1 */}
             <li class="mb-10 ml-4">
-              <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+              <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700 text-justify"></div>
               <time class="text-lg font-semibold text-gray-900 dark:text-black">
                 Meet yourself where you are
               </time>
-              <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+              <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 text-justify">
                 Depression is common. It affects millions of people, including
                 some in your life. You may not realize they face similar
                 challenges, emotions, and obstacles. The key to navigating
@@ -92,11 +99,11 @@ function Roadmap() {
             {/* 2 */}
             <li class="mb-10 ml-4">
               <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-              <time class="text-lg font-semibold text-gray-900 dark:text-black">
+              <time class="text-lg font-semibold text-gray-900 dark:text-black text-justify">
                 Consider a walk around the block or any exerciseMeet yourself
                 where you are
               </time>
-              <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p class="text-base font-normal text-gray-500 dark:text-gray-400 text-justify">
                 <ReadMore>
                   On days when you feel as if you can’t get out of bed, exercise
                   may seem like the last thing you’d want to do. However,
@@ -119,7 +126,7 @@ function Roadmap() {
               <time class="text-lg font-semibold text-gray-900 dark:text-black">
                 Know that today isn’t indicative of tomorrow
               </time>
-              <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p class="text-base font-normal text-gray-500 dark:text-gray-400 text-justify">
                 <ReadMore>
                   Internal emotions and thoughts can change from day to day.
                   Tracking experiences through journaling or keeping a mood
@@ -138,7 +145,7 @@ function Roadmap() {
               <time class="text-lg font-semibold text-gray-900 dark:text-black">
                 Assess the parts instead of generalizing the whole
               </time>
-              <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p class="text-base font-normal text-gray-500 dark:text-gray-400 text-justify">
                 Depression can tinge recollections with difficult emotions. You
                 may find yourself focusing on things that are unhelpful or
                 perceived as difficult. Try to stop this overgeneralization.
@@ -168,7 +175,7 @@ function Roadmap() {
               <time class="text-lg font-semibold text-gray-900 dark:text-black">
                 You may find it helpful to create a routine
               </time>
-              <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p class="text-base font-normal text-gray-500 dark:text-gray-400 text-justify">
                 If depressive symptoms disrupt your daily routine, setting a
                 gentle schedule may help you feel in control. These plans don’t
                 have to map out an entire day. Focus on creating a loose, but
@@ -182,7 +189,7 @@ function Roadmap() {
               <time class="text-lg font-semibold text-gray-900 dark:text-black">
                 Do something you enjoy…
               </time>
-              <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p class="text-base font-normal text-gray-500 dark:text-gray-400 text-justify">
                 Depression can push you to give in to your fatigue. It may feel
                 more powerful than preferred emotions. Try to push back and do
                 something you love — something that’s pleasurable or meaningful.
@@ -199,7 +206,7 @@ function Roadmap() {
               <time class="text-lg font-semibold text-gray-900 dark:text-black">
                 Try listening to music
               </time>
-              <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p class="text-base font-normal text-gray-500 dark:text-gray-400 text-justify">
                 ResearchTrusted Source shows music can be a great way to boost
                 your mood and improve symptoms of depression. It may also help
                 you strengthenTrusted Source your reception of positive
@@ -214,7 +221,7 @@ function Roadmap() {
               <time class="text-lg font-semibold text-gray-900 dark:text-black">
                 Spend time with loved ones
               </time>
-              <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p class="text-base font-normal text-gray-500 dark:text-gray-400 text-justify">
                 Depression can tempt you to isolate yourself and withdraw from
                 people you love and trust, but face-to-face time can help wash
                 away those tendencies. If you’re unable to spend time together
@@ -242,7 +249,7 @@ function Roadmap() {
               <time class="text-lg font-semibold text-gray-900 dark:text-black">
                 Use writing or journaling to express your feelings
               </time>
-              <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+              <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 text-justify">
                 Consider writing or journaling about what you’re experiencing.
                 Then, when the feelings lift, write about that, too.
                 ResearchTrusted Source has shown that keeping a journal can be a
@@ -261,7 +268,7 @@ function Roadmap() {
               <time class="text-lg font-semibold text-gray-900 dark:text-black">
                 Try something new entirely
               </time>
-              <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p class="text-base font-normal text-gray-500 dark:text-gray-400 text-justify">
                 When you do the same thing day after day, you use the same parts
                 of your brain. Research shows doing new things can feel
                 rewarding improve your overall well-being and strengthen your
@@ -276,7 +283,7 @@ function Roadmap() {
               <time class="text-lg font-semibold text-gray-900 dark:text-black">
                 Incorporating meditation may help ground your thoughts
               </time>
-              <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p class="text-base font-normal text-gray-500 dark:text-gray-400 text-justify">
                 Stress and anxiety can prolong your depression symptoms. Finding
                 relaxation techniques can help you lower stress and invite more
                 joy and balance into your day. ResearchTrusted Source suggests
@@ -291,7 +298,7 @@ function Roadmap() {
               <time class="text-lg font-semibold text-gray-900 dark:text-black">
                 Getting enough sleep can also have a noticeable effect
               </time>
-              <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p class="text-base font-normal text-gray-500 dark:text-gray-400 text-justify">
                 Sleep disturbancesTrusted Source are common with depression. You
                 may not sleep well, or you may sleep too much. Both can make
                 depression symptoms worse. Aim for 8 hours of sleep per night.
@@ -319,7 +326,7 @@ function Roadmap() {
               <time class="text-lg font-semibold text-gray-900 dark:text-black">
                 Accept the validity of your emotions
               </time>
-              <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p class="text-base font-normal text-gray-500 dark:text-gray-40 text-justify">
                 Suppressing and compartmentalizing your feelings may seem like a
                 strategic way to cope with the difficult symptoms of depression.
                 But this technique is ultimately unhealthyTrusted Source and
@@ -336,7 +343,7 @@ function Roadmap() {
               <time class="text-lg font-semibold text-gray-900 dark:text-black">
                 Consider clinical treatment
               </time>
-              <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p class="text-base font-normal text-gray-500 dark:text-gray-400 text-justify">
                 You may also find it helpful to speak to a professional about
                 what you’re going through. A general practitioner may be able to
                 refer you to a therapist or other specialist. They can assess
@@ -353,7 +360,7 @@ function Roadmap() {
 
         {/* Roadmap */}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
