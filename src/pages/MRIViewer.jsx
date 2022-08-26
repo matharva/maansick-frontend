@@ -46,7 +46,7 @@ const MRIViewer = ({ niiFile, SVMResult, bulkFiles }) => {
   }, [bulkFiles]);
 
   useEffect(()=>{
-    setScore(SVMResult.score);
+    setScore(SVMResult?.score.toFixed(2));
     setHumanType(localStorage?.getItem('type'));
   },[])
 

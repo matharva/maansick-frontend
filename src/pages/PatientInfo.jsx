@@ -57,7 +57,7 @@ const PatientInfo = ({ niiFile, SVMResult, bulkFiles }) => {
       "/sample_dwi_2.nii.gz",
       "/sample_dwi_3.nii.gz",
     ];
-    const imageLink = imageArr[Math.ceil(Math.random() * 2)];
+    const imageLink = imageArr[Math.floor(Math.random() * 3)];
 
     if (IS_SVM) {
       p["surfaces"] = ["/sample_image.surf"];

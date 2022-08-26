@@ -1,6 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards } from "swiper";
+import { useEffect, useState } from "react";
 
 import SwiperCore, { Autoplay } from "swiper";
 
@@ -41,6 +42,12 @@ const renderSliderCards = () => {
     );
   });
 };
+
+const [res, setRes] = useState();
+
+useEffect(() => {
+
+}, [])
 
 const MRIStoryBoardSwiper = () => {
   return (
