@@ -73,7 +73,7 @@ const PatientInfo = ({ niiFile, SVMResult, bulkFiles }) => {
   }, [params]);
 
   return (
-    <>
+    <div className="mriViewerBg">
       <Header />
 
       <div className="flex h-screen items-center justify-center pt-12">
@@ -84,7 +84,7 @@ const PatientInfo = ({ niiFile, SVMResult, bulkFiles }) => {
           className="flex items-center justify-center"
           style={{ flex: "0.5", height: "100%" }}
         >
-          <div className="flex items-center justify-center flex-col">
+          <div className="flex items-center justify-center flex-col bg-gray-50 p-10 rounded-xl shadow-xl">
             <div className="text-4xl font-bold text-center ">Results</div>
             {true ? (
               // <div className="text-9xl py-10 font-bold">`${SVMResult}%`</div>
@@ -123,7 +123,7 @@ const PatientInfo = ({ niiFile, SVMResult, bulkFiles }) => {
       <MRIStoryBoard />
 
       <Quiz />
-    </>
+    </div>
   );
 };
 
