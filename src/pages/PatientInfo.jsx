@@ -6,6 +6,7 @@ import { CountUp } from "use-count-up";
 import Header from "../partials/Header";
 import Quiz from "../components/Quiz";
 import MRIStoryBoard from "../components/MRIStoryBoard";
+import { useSearchParams } from "react-router-dom";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -72,11 +73,20 @@ const PatientInfo = ({ niiFile, SVMResult, bulkFiles }) => {
     window.papaya.Container.startPapaya();
     window.papaya.Container.resetViewer(0, params);
   }, [params]);
+  const [searchParams] = useSearchParams();
+  const [email, setEmail] = useState();
+  useEffect(() => {
+    setEmail(searchParams.get("email"));
+  }, []);
+  
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
 
   return (
-    <>
+    <div className="patientUploadBg min-h-screen">
       <Header />
-      <div className="patientUploadBg">
+      <div>
         {/* <div
         className="absolute left-1/2 transform -translate-x-1/2 bottom-0 pointer-events-none"
         aria-hidden="true"
@@ -121,6 +131,16 @@ const PatientInfo = ({ niiFile, SVMResult, bulkFiles }) => {
           </g>
         </svg>
       </div> */}
+    <div className="flex pt-20 items-center justify-center flex-col">
+      {email && <div className="font-bold text-3xl mb-4">
+                                {capitalizeFirstLetter(
+                                  email.split(".")[0]
+                                ) +
+                                  " " +
+                                  capitalizeFirstLetter(
+                                    email.split(".")[1].slice(0, -5)
+                                  )}</div>}
+      </div>
 
         <div className="flex h-screen items-center justify-center pt-12">
           <div style={{ flex: "0.5", zIndex: 9 }}>
@@ -130,7 +150,7 @@ const PatientInfo = ({ niiFile, SVMResult, bulkFiles }) => {
             className="flex items-center justify-center"
             style={{ flex: "0.5", height: "100%" }}
           >
-            <div className="flex items-center justify-center flex-col">
+            <div className="flex items-center justify-center flex-col bg-gray-50 p-10 rounded-xl shadow-xl">
               <div className="text-4xl font-bold text-center ">Results</div>
               {true ? (
                 // <div className="text-9xl py-10 font-bold">`${SVMResult}%`</div>
@@ -167,14 +187,28 @@ const PatientInfo = ({ niiFile, SVMResult, bulkFiles }) => {
         </div>
 
         <MRIStoryBoard />
+        <div className="grid grid-cols-2 gap-4 ">
+          <div className="text-center text-3xl font-bold mb-4 col-span-1">
+            Quiz Results
+          </div>
+          <div className="text-center text-3xl font-bold mb-4 col-span-1">
+            Patient Feedback
+          </div>
+        </div>
 
-        <div className="flex flex-row">
+                
+        <div className="grid grid-cols-2 mb-10">
+          <div className="col-span-1 shadow-2xl">
           <Quiz />
+          </div>
+          <div className="col-span-1 shadow-2xl">
           <PatientFeeback />
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
 export default PatientInfo;
+ 

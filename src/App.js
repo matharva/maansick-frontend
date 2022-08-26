@@ -91,7 +91,7 @@ function App() {
           {/*Patient-Roadmap*/}
           {/* <Route path="/roadmap" element={<Roadmap />} /> */}
           <Route path="/doctor/patients" element={<Patients />} />
-          <Route path="/doctor/patients/:email" element={<PatientInfo />} />
+          <Route path="/doctor/patients/info" element={<PatientInfo />} />
           <Route path="/patients/book" element={<PatientBooking />} />
           <Route path="/rocky" element={<Therapist/>}/>
         </Routes>
