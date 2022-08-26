@@ -206,9 +206,8 @@ const Quiz = () => {
   console.log("QuizData: ", quizData);
 
   return (
-    <div className="flex h-screen items-center justify-center flex-col">
-      <div className="font-bold text-3xl mb-4">Quiz Results</div>
-      <div style={{ width: "50%" }} className="">
+    <div className="w-full ">
+      <div style={{ width: "100%" }} className="">
         <div class="overflow-x-auto relative">
           <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
