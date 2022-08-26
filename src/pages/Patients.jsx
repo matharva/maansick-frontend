@@ -3,6 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../partials/Header";
+import "../css/style.css";
 
 const Patients = () => {
   const navigate = useNavigate();
@@ -21,6 +22,53 @@ const Patients = () => {
   return (
     <>
       <Header />
+      {/* Illustration behind hero content */}
+      <div
+        className="absolute left-1/2 transform -translate-x-1/2 bottom-0 pointer-events-none"
+        aria-hidden="true"
+      >
+        <svg
+          width="1520"
+          height="578"
+          viewBox="0 0 1360 600"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient
+              x1="50%"
+              y1="0%"
+              x2="50%"
+              y2="100%"
+              id="illustration-01"
+            >
+              <stop stopColor="#FFF" offset="0%" />
+              <stop stopColor="#EAEAEA" offset="77.402%" />
+              <stop stopColor="#DFDFDF" offset="100%" />
+            </linearGradient>
+          </defs>
+          <g fill="url(#illustration-01)" fillRule="evenodd">
+            {/* <circle cx="1380" cy="128" r="128" /> */}
+            <circle cx="100" cy="530" r="64" />
+          </g>
+          {/* Second Circle */}
+          <defs>
+            <linearGradient
+              x1="50%"
+              y1="0%"
+              x2="50%"
+              y2="100%"
+              id="illustration-02"
+            >
+              <stop stopColor="#E0F4FD" offset="0%" />
+              <stop stopColor="#FEFCFF" offset="77.402%" />
+              <stop stopColor="#D2F9FE" offset="100%" />
+            </linearGradient>
+          </defs>
+          <g fill="url(#illustration-02)" fillRule="evenodd">
+            <circle cx="1380" cy="128" r="128" />
+          </g>
+        </svg>
+      </div>
       <div className="pt-24">
         {/* <div className="font-bold text-6xl text-center py-12">
           Doctor's Dashboard
@@ -52,7 +100,15 @@ const Patients = () => {
                           <h2 class="text-gray-900 title-font font-medium">
                             {capitalizeFirstLetter(element.id.split('.')[0]) + " " + capitalizeFirstLetter(element.id.split('.')[1].slice(0, -5))}
                           </h2>
-                          <p class="text-gray-500">{capitalizeFirstLetter(element.status)}</p>
+                          <div className="clock">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" fill="#D62929" className="w-6 h-6" style={{paddingTop: "2%"}}>
+                                <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 000-1.5h-3.75V6z" clipRule="evenodd" />
+                            </svg>
+                            <span class="text-red-500">{capitalizeFirstLetter(element.status)}</span>
+                            {/* <p class="text-gray-500">{capitalizeFirstLetter(element.status)}</p> */}
+                          </div>
+
+                          
                         </div>
                       </div>
                     </div>
