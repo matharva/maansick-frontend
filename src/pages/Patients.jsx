@@ -48,7 +48,7 @@ const Patients = () => {
         aria-hidden="true"
       >
         <svg
-          width="1520"
+          width="1510"
           height="578"
           viewBox="0 0 1360 600"
           xmlns="http://www.w3.org/2000/svg"
