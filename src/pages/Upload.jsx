@@ -37,36 +37,38 @@ const Upload = ({ bulkFiles, setBulkFiles, setSVMResult }) => {
     const SVMendpoint = BACKEND_URL + "/evaluate";
 
     navigate("/loading");
-    console.log("After redirect");
+    // console.log("After redirect");
 
-    axios
-      .post(SVMendpoint, formData)
-      .then((response) => {
-        console.log("res from SVM model: ", response);
-        let data = response.data;
-        setSVMResult(data);
-        if (localStorage?.getItem("email") != null)
-          axios
-            .get(
-              "http://localhost:4000/patients/" + localStorage.getItem("email")
-            )
-            .then((res) => {
-              let tempData = res.data;
-              tempData.niiFileName = bulkFiles["nii"].name;
-              tempData.perc = data.score;
-              axios.put(
-                "http://localhost:4000/patients/" +
-                  localStorage?.getItem("email"),
-                tempData
-              );
-            });
-        navigate("/mri");
-      })
-      .catch((err) => {
-        console.log(err);
-        console.log("Backend is not running");
-        navigate("/mri");
-      });
+    // axios
+    //   .post(SVMendpoint, formData)
+    //   .then((response) => {
+    //     console.log("res from SVM model: ", response);
+    //     let data = response.data;
+    //     setSVMResult(data);
+    //     if (localStorage?.getItem("email") != null)
+    //       axios
+    //         .get(
+    //           "http://localhost:4000/patients/" + localStorage.getItem("email")
+    //         )
+    //         .then((res) => {
+    //           let tempData = res.data;
+    //           tempData.niiFileName = bulkFiles["nii"].name;
+    //           tempData.perc = data.score;
+    //           axios.put(
+    //             "http://localhost:4000/patients/" +
+    //               localStorage?.getItem("email"),
+    //             tempData
+    //           );
+    //         });
+        setTimeout(() => {
+          navigate("/vert");
+        }, 20000)
+      // })
+      // .catch((err) => {
+      //   console.log(err);
+      //   console.log("Backend is not running");
+      //   navigate("/mri");
+      // });
   };
   return (
     <motion.div
