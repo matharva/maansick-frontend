@@ -19,6 +19,7 @@ import Roadmap from "./pages/Roadmap";
 import ThreeModel from "./components/ThreeModel";
 import Patients from "./pages/Patients";
 import PatientInfo from "./pages/PatientInfo";
+import Timeslot from "./pages/Timeslot";
 import { AuthProvider } from "./context/AuthContext";
 import Header from "./partials/Header";
 
@@ -90,6 +91,7 @@ function App() {
           {/* <Route path="/roadmap" element={<Roadmap />} /> */}
           <Route path="/doctor/patients" element={<Patients />} />
           <Route path="/doctor/patients/:email" element={<PatientInfo />} />
+          <Route path="/timeslot" element={<Timeslot />} />
         </Routes>
       </AuthProvider>
     </div>
