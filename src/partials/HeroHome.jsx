@@ -61,7 +61,10 @@ function HeroHome() {
                 // data-aos="zoom-y-out"
                 data-aos-delay="150"
               >
-              Depression is a leading cause of disability worldwide. We aim to develop a Computer Aided Diagnosis Model and to detect depression in the early stages and to aid neurologists, radiologists and therapists in treating the diagnosed patients.
+                Depression is a leading cause of disability worldwide. We aim to
+                develop a Computer Aided Diagnosis Model and to detect
+                depression in the early stages and to aid neurologists,
+                radiologists and therapists in treating the diagnosed patients.
               </p>
               {/* <div
                 className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center"
@@ -98,12 +101,12 @@ function HeroHome() {
               <div className="flex flex-col justify-center">
                 <img
                   className="mx-auto"
-                  src= {HeroImage}
+                  src={HeroImage}
                   width="768"
                   height="432"
                   alt="Hero"
                 />
-                </div>
+              </div>
             </div>
 
             {/* Modal */}

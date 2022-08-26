@@ -38,7 +38,7 @@ export default function Model() {
         topLeftRef.current.material.color = DARK_PINK;
         bottomLeftRef.current.material.color = PINK;
         bottomRightRef.current.material.color = PINK;
-      }, 10000);
+      }, 12000);
 
       topRightRef.current.material.color = PINK;
       topLeftRef.current.material.color = PINK;

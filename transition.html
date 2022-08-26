@@ -11,6 +11,80 @@
         margin: 0;
         box-sizing: 0;
       }
+
+      body {
+        width: 100%;
+        height: 100vh;
+        background: black;
+      }
+
+      #logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      #letter1 {
+        stroke-dasharray: 1479px;
+        stroke-dashoffset: 1479px;
+        animation: line-anim 5s ease forwards;
+      }
+
+      #letter2 {
+        stroke-dasharray: 993px;
+        stroke-dashoffset: 993px;
+        animation: line-anim 5s ease forwards;
+      }
+
+      #letter3 {
+        stroke-dasharray: 993px;
+        stroke-dashoffset: 993px;
+        animation: line-anim 5s ease forwards;
+      }
+
+      #letter4 {
+        stroke-dasharray: 877px;
+        stroke-dashoffset: 877px;
+        animation: line-anim 5s ease forwards;
+      }
+
+      #letter5 {
+        stroke-dasharray: 1027px;
+        stroke-dashoffset: 1027px;
+        animation: line-anim 5s ease forwards;
+      }
+
+      #letter6 {
+        stroke-dasharray: 551px;
+        stroke-dashoffset: 551px;
+        animation: line-anim 5s ease forwards;
+      }
+
+      #letter7 {
+        stroke-dasharray: 838px;
+        stroke-dashoffset: 838px;
+        animation: line-anim 5s ease forwards;
+      }
+
+      #letter8 {
+        stroke-dasharray: 968px;
+        stroke-dashoffset: 968px;
+        animation: line-anim 5s ease forwards;
+      }
+
+      @keyframes line-anim {
+        to {
+          stroke-dashoffset: 0;
+          fill: white;
+        }
+      }
+
+      @keyframes fill {
+        to {
+          fill: black;
+        }
+      }
     </style>
   </head>
   <body>

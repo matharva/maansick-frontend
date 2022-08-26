@@ -55,7 +55,7 @@ export const data = {
       "Bipolar Disorder",
     ],
     suggestions: [
-      "Staying organized: set appointment reminders, highlight important days on the calendar, etc.",
+      "Staying organized:  set appointment reminders, highlight important days on the calendar, etc.",
       "Set aside time each day to update your lists and schedules.",
       "Don’t let the task become a chore in itself; think of it like a routine task such as brushing your teeth, and do it daily so it becomes an established habit.",
       "Staying focused: Reduce distractions, jot down ideas as they come to you",

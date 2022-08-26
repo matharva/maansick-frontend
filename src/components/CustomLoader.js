@@ -3,7 +3,14 @@ import React from "react";
 const CustomLoader = () => {
   return (
     <div className="customloader" style={{ flexDirection: "row" }}>
-      <div id="logo">
+      <div
+        id="logo"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <svg
           width="112"
           height="110"
