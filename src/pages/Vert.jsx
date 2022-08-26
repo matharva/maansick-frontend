@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import Therapist from "../components/Therapist";
 
 import ThreeModel from "../components/ThreeModel";
 
@@ -41,7 +42,7 @@ const UpperComponent = ({ state }) => {
       </div>
       <div
         id="bottomleft"
-        className="absolute text-white helper"
+        className="absolute text-white"
         style={{ bottom: "10%", left: "10%" }}
       >
         <div className="text-2xl font-bold text-start">Diseases:</div>
@@ -135,7 +136,9 @@ export default function Vert() {
           <ThreeModel />
           {isModelResult ? <FinalResult /> : <UpperComponent state={counter} />}
         </section>
-        <section class="child"></section>
+        <section class="child">
+          <Therapist />
+        </section>
         <section class="child"></section>
         <section class="child"></section>
         <section class="child"></section>
