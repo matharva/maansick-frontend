@@ -206,7 +206,7 @@ const Quiz = () => {
   console.log("QuizData: ", quizData);
 
   return (
-    <div className="flex h-screen items-center justify-center flex-col">
+    <div className="flex grow h-screen items-center justify-center flex-col">
       <div className="font-bold text-3xl mb-4">Quiz Results</div>
       <div style={{ width: "50%" }} className="">
         <div class="overflow-x-auto relative">

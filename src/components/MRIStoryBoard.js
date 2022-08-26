@@ -8,6 +8,7 @@ import SwiperCore, { Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import IMG from "../images/fa.png";
+import { BACKEND_URL } from "../constants";
 
 // SwiperCore.use([Autoplay]);
 
@@ -70,10 +71,10 @@ const MRIStoryBoardSwiper = () => {
 const MRIStoryBoard = () => {
   const res = {
     output: [
-      "/static/images/p06871_bmatrix_1000.nii.gz_0_3.png",
-      "/static/images/p06871_bmatrix_1000.nii.gz_2_3.png",
-      "/static/images/p06871_bmatrix_1000.nii.gz_4_3.png",
-      "/static/images/p06871_bmatrix_1000.nii.gz_7_3.png",
+      "/static/images/p06873_bmatrix_1000.nii.gz_0_3.png",
+      "/static/images/p06873_bmatrix_1000.nii.gz_2_3.png",
+      "/static/images/p06873_bmatrix_1000.nii.gz_4_3.png",
+      "/static/images/p06873_bmatrix_1000.nii.gz_7_3.png",
     ],
     quads: {
       diseases: [],
@@ -86,10 +87,10 @@ const MRIStoryBoard = () => {
     <div className="flex h-screen items-center justify-center flex-col">
       <div className="font-bold text-3xl mb-4">Feature Learning</div>
       <div className="flex" style={{ width: "75%" }}>
-        {res?.output?.map(() => {
+        {res?.output?.map((element) => {
           return (
-            <div className="">
-              <img src={IMG} alt="" />
+            <div className="mx-4 border-4 border-black">
+              <img src={BACKEND_URL + element} alt="" />
             </div>
           );
         })}

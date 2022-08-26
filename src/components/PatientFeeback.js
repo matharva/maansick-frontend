@@ -11,7 +11,7 @@ const PatientFeeback = () => {
   }, []);
 
   return (
-    <div className="pb-12 " style={{ width: "35%", margin: "0 auto" }}>
+    <div className="pb-12 " style={{ width: "35%", margin: "0 auto", background: "white" }}>
       <form className="px-24 py-16 card-shadow rounded-md">
         <div className="text-center text-3xl font-bold mb-4">
           Patient Feedback

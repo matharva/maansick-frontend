@@ -166,11 +166,12 @@ const PatientInfo = ({ niiFile, SVMResult, bulkFiles }) => {
           </div>
         </div>
 
-        {/* <MRIStoryBoard /> */}
+        <MRIStoryBoard />
 
-        <Quiz />
-
-        <PatientFeeback />
+        <div className="flex flex-row">
+          <Quiz />
+          <PatientFeeback />
+        </div>
       </div>
     </>
   );

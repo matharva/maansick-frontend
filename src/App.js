@@ -19,9 +19,9 @@ import Roadmap from "./pages/Roadmap";
 import ThreeModel from "./components/ThreeModel";
 import Patients from "./pages/Patients";
 import PatientInfo from "./pages/PatientInfo";
-import Timeslot from "./pages/Timeslot";
 import { AuthProvider } from "./context/AuthContext";
 import Header from "./partials/Header";
+import PatientBooking from "./pages/PatientBooking";
 
 function App() {
   const location = useLocation();
@@ -91,7 +91,7 @@ function App() {
           {/* <Route path="/roadmap" element={<Roadmap />} /> */}
           <Route path="/doctor/patients" element={<Patients />} />
           <Route path="/doctor/patients/:email" element={<PatientInfo />} />
-          <Route path="/timeslot" element={<Timeslot />} />
+          <Route path="/patients/book" element={<PatientBooking />} />
         </Routes>
       </AuthProvider>
     </div>
