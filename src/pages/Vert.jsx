@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import CustomLoader from "../components/CustomLoader";
 import Therapist from "../components/Therapist";
 
 import ThreeModel from "../components/ThreeModel";
@@ -132,6 +133,9 @@ export default function Vert() {
   return (
     <>
       <div class="scroll-container">
+        {/* <section class="child">
+          <CustomLoader />
+        </section> */}
         <section class="child relative " style={{ position: "relative" }}>
           <ThreeModel />
           {isModelResult ? <FinalResult /> : <UpperComponent state={counter} />}
@@ -139,7 +143,6 @@ export default function Vert() {
         <section class="child">
           <Therapist />
         </section>
-        <section class="child"></section>
         <section class="child"></section>
         <section class="child"></section>
         <section class="child"></section>
