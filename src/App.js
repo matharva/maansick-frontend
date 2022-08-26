@@ -20,7 +20,8 @@ import ThreeModel from "./components/ThreeModel";
 import Patients from "./pages/Patients";
 import PatientInfo from "./pages/PatientInfo";
 import { AuthProvider } from "./context/AuthContext";
-import Header from "./partials/Header";
+// import Header from "./partials/Header";
+import Vert from "./pages/Vert";
 
 function App() {
   const location = useLocation();
@@ -90,6 +91,7 @@ function App() {
           {/* <Route path="/roadmap" element={<Roadmap />} /> */}
           <Route path="/doctor/patients" element={<Patients />} />
           <Route path="/doctor/patients/:email" element={<PatientInfo />} />
+          <Route path="/vert" element={<Vert />} />
         </Routes>
       </AuthProvider>
     </div>
