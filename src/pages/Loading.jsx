@@ -27,10 +27,10 @@ const Loading = () => {
       </button> */}
       <div className="relative">
         <div
-          className="absolute text-4xl font-bold text-white"
-          style={{ position: "absolute", top: "10%", right: "40%" }}
+          className="absolute text-4xl font-bold text-white loading"
+          style={{ position: "absolute", top: "10%", left: "40%" }}
         >
-          Loading Model...
+          Loading Results
         </div>
         <iframe
           width={"100%"}

@@ -43,7 +43,6 @@ const renderSliderCards = () => {
   });
 };
 
-
 const MRIStoryBoardSwiper = () => {
   return (
     <div className="flex-row h-max">
