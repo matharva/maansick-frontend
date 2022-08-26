@@ -178,7 +178,7 @@ function SignIn() {
                     <div className="flex w-1/2 px-3 gap-2">
                       <input
                         type="radio"
-                        name="value"
+                        name="value1"
                         onChange={() => {
                           setGender("female");
                         }}
@@ -188,7 +188,7 @@ function SignIn() {
                     <div className="flex w-1/2 px-3 gap-2">
                       <input
                         type="radio"
-                        name="value"
+                        name="value1"
                         onChange={() => {
                           setGender("male");
                         }}
