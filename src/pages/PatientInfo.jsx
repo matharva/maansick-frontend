@@ -120,7 +120,7 @@ const PatientInfo = ({ niiFile, SVMResult, bulkFiles }) => {
         </div>
       </div>
 
-      <MRIStoryBoard />
+      {/* <MRIStoryBoard /> */}
 
       <Quiz />
     </>
