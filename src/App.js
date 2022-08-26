@@ -22,6 +22,7 @@ import PatientInfo from "./pages/PatientInfo";
 import { AuthProvider } from "./context/AuthContext";
 import Header from "./partials/Header";
 import PatientBooking from "./pages/PatientBooking";
+import Therapist from "./components/Therapist";
 
 function App() {
   const location = useLocation();
@@ -92,6 +93,7 @@ function App() {
           <Route path="/doctor/patients" element={<Patients />} />
           <Route path="/doctor/patients/:email" element={<PatientInfo />} />
           <Route path="/patients/book" element={<PatientBooking />} />
+          <Route path="/rocky" element={<Therapist/>}/>
         </Routes>
       </AuthProvider>
     </div>
