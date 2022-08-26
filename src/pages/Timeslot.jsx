@@ -8,13 +8,13 @@ import FormControl from '@mui/material/FormControl';
 
 const Timeslot = () => {
   return (
-    <div style={{width: "49rem", border: "1px solid blue", margin:"2rem", padding: "1rem",  borderRadius: "2rem", boxShadow: "10px 10px 8px #D3D3D3"}}>
+    <div style={{width: "49rem", border: "1px solid blue", margin:"2rem", padding: "1rem",  borderRadius: "2rem", boxShadow: "10px 10px 8px #D3D3D3", fontSize: "10"}}>
       <FormControl>
       <br />
       <div className="flex">
        {/* Parent*/}
        <h3>Name of Therapist</h3>
-       <h3 className="indent-48">Time Slots</h3>
+       <h3 className="indent-40">Time Slots</h3>
       </div>
       <hr/>
       <br />
