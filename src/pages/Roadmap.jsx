@@ -22,9 +22,13 @@ const ReadMore = ({ children }) => {
 
 function Roadmap() {
   return (
-    <div>
+    <motion.div
+    initial={{ opacity: 0}}
+    animate={{ opacity: 1}}
+    transition={{ duration: 0.5 }}
+    >
       {/* motion */}
-      <div className="bg-white">
+      <div className=" bg-white">
         <motion.h1
           initial={{ x: -1000 }}
           animate={{ x: 0 }}
@@ -76,11 +80,11 @@ function Roadmap() {
           >
             {/* 1 */}
             <li class="mb-10 ml-4">
-              <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+              <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700 text-justify"></div>
               <time class="text-lg font-semibold text-gray-900 dark:text-black">
                 Meet yourself where you are
               </time>
-              <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+              <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 text-justify">
                 Depression is common. It affects millions of people, including
                 some in your life. You may not realize they face similar
                 challenges, emotions, and obstacles. The key to navigating
@@ -353,7 +357,7 @@ function Roadmap() {
 
         {/* Roadmap */}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
