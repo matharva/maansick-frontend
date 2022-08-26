@@ -6,20 +6,53 @@
   border: 2px solid yellowgreen;
 }
 
-.container{
+.container {
   position: absolute;
   top: 10%;
   left: 23%;
   width: 50%;
 }
-  
-.text{
+
+.text {
   display: inline;
   width: 100%;
 }
-  
-.read-or-hide{
-  color: rgb(43,108,176);
+
+.read-or-hide {
+  color: rgb(43, 108, 176);
   cursor: pointer;
   font-weight: bolder;
+}
+
+.loading:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4, end) 900ms infinite;
+  animation: ellipsis steps(4, end) 900ms infinite;
+  content: "\2026"; /* ascii code for the ellipsis character */
+  width: 10px;
+}
+
+@keyframes ellipsis {
+  to {
+    width: 40px;
+  }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 40px;
+  }
+}
+
+.card-shadow {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card-shadow:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }

@@ -12,19 +12,19 @@
     {
       "name": "Deep Nayak",
       "id": "deep.nayak@spit.ac.in",
-      "niiFileName": "",
+      "niiFileName": "p06873_bmatrix_1000.nii.gz",
       "mappedDoctorEmail": "",
       "quadrant": "",
-      "perc": "",
+      "perc": 94.43,
       "staticImages": []
     },
     {
       "name": "Ameya Jangam",
       "id": "ameya.jangam@spit.ac.in",
-      "niiFileName": "p07677_bmatrix_1000.nii.gz",
+      "niiFileName": "p07663_bmatrix_1000.nii.gz",
       "mappedDoctorEmail": "",
       "quadrant": "",
-      "perc": 64.54,
+      "perc": 59.54,
       "staticImages": []
     },
     {
@@ -339,6 +339,62 @@
           "id": "yash.brid@spit.ac.in",
           "status": "pending",
           "feedback": ""
+        }
+      ]
+    }
+  ],
+  "bookings": [
+    {
+      "id": "deep.nayak@spit.ac.in",
+      "name": "Deep Nayak",
+      "bookings": [
+        {
+          "doctorName": "Abha Gawande",
+          "doctorEmail": "abha.gawande@spit.ac.in",
+          "date": "12/05/2023",
+          "time": "16:30:00"
+        },
+        {
+          "doctorName": "Atharva Mohite",
+          "doctorEmail": "atharva.mohite@spit.ac.in",
+          "date": "13/05/2023",
+          "time": "18:30:00"
+        }
+      ]
+    },
+    {
+      "id": "aditya.motwani@spit.ac.in",
+      "name": "Aditya Motwani",
+      "bookings": [
+        {
+          "doctorName": "Param Patil",
+          "doctorEmail": "param.patil@spit.ac.in",
+          "date": "12/06/2023",
+          "time": "17:30:00"
+        },
+        {
+          "doctorName": "Atharva Mohite",
+          "doctorEmail": "atharva.mohite@spit.ac.in",
+          "date": "09/08/2023",
+          "time": "18:30:00"
+        }
+      ]
+    },
+    {
+      "id": "ameya.jangam@spit.ac.in",
+      "name": "Ameya Jangam",
+      "bookings": [
+        {
+          "doctorName": "Abha Gawande",
+          "doctorEmail": "abha.gawande@spit.ac.in",
+          "date": "12/05/2023",
+          "time": "16:30:00"
+        },
+        {
+          "doctorName": "Atharva Mohite",
+          "doctorEmail": "atharva.mohite@spit.ac.in",
+          "date": "13/05/2023",
+          "time": "18:30:00"
         }
       ]
     }

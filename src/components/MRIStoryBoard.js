@@ -1,14 +1,16 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards } from "swiper";
+import { useEffect, useState } from "react";
 
 import SwiperCore, { Autoplay } from "swiper";
 
 import "swiper/css";
 import "swiper/css/effect-cards";
 import IMG from "../images/fa.png";
+import { BACKEND_URL } from "../constants";
 
-SwiperCore.use([Autoplay]);
+// SwiperCore.use([Autoplay]);
 
 const renderSliderCards = () => {
   const items = [
@@ -34,7 +36,7 @@ const renderSliderCards = () => {
         <SwiperSlide
           className={`flex items-center justify-center ${item.color} rounded-md`}
         >
-          {/* {item.name} */}
+          {item.name}
           <img src={item.img} alt="" />
         </SwiperSlide>
       </>
@@ -42,9 +44,10 @@ const renderSliderCards = () => {
   });
 };
 
-const MRIStoryBoard = () => {
+const MRIStoryBoardSwiper = () => {
   return (
     <div className="flex-row h-max">
+      <div className="">Feature Learning</div>
       <Swiper
         effect={"cards"}
         // autoplay={{
@@ -61,6 +64,37 @@ const MRIStoryBoard = () => {
           <div className="div">Load 3D model</div>
         </SwiperSlide>
       </Swiper>
+    </div>
+  );
+};
+
+const MRIStoryBoard = () => {
+  const res = {
+    output: [
+      "/static/images/p06873_bmatrix_1000.nii.gz_0_3.png",
+      "/static/images/p06873_bmatrix_1000.nii.gz_2_3.png",
+      "/static/images/p06873_bmatrix_1000.nii.gz_4_3.png",
+      "/static/images/p06873_bmatrix_1000.nii.gz_7_3.png",
+    ],
+    quads: {
+      diseases: [],
+      lobes: [],
+      quad: "C",
+      suggestions: [],
+    },
+  };
+  return (
+    <div className="flex h-screen items-center justify-center flex-col">
+      <div className="font-bold text-3xl mb-4">Feature Learning</div>
+      <div className="flex" style={{ width: "75%" }}>
+        {res?.output?.map((element) => {
+          return (
+            <div className="mx-4 border-4 border-black">
+              <img src={BACKEND_URL + element} alt="" />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
