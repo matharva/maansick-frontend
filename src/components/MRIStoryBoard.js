@@ -43,11 +43,6 @@ const renderSliderCards = () => {
   });
 };
 
-const [res, setRes] = useState();
-
-useEffect(() => {
-
-}, [])
 
 const MRIStoryBoardSwiper = () => {
   return (
