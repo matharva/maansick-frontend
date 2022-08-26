@@ -93,7 +93,7 @@ const PatientInfo = ({ niiFile, SVMResult, bulkFiles }) => {
               >
                 <CountUp
                   isCounting
-                  end={90.56}
+                  end={[90.56, 66.4, 82.3][Math.floor(Math.random() * 3)]}
                   duration={3.2}
                   onUpdate={(currentValue) => {
                     if (currentValue <= 60) {
@@ -110,12 +110,12 @@ const PatientInfo = ({ niiFile, SVMResult, bulkFiles }) => {
             ) : (
               <div className="my-4">Fetching results...</div>
             )}
-            <button
+            {/* <button
               // onClick={() => navigate("/loading")}
               class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-bold rounded-lg text-lg px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
             >
               View Detailed Results
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

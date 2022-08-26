@@ -43,12 +43,6 @@ const renderSliderCards = () => {
   });
 };
 
-const [res, setRes] = useState();
-
-useEffect(() => {
-
-}, [])
-
 const MRIStoryBoardSwiper = () => {
   return (
     <div className="flex-row h-max">
